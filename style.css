@@ -766,10 +766,6 @@ input {
   box-shadow: 7px 7px 0 var(--mocha);
 }
 
-.story-card.featured {
-  background: var(--pink-soft);
-}
-
 .quote-mark {
   font: 500 80px / 0.5 'Playfair Display', serif;
   color: var(--rose);
