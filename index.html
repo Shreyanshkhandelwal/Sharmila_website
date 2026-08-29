@@ -50,7 +50,7 @@
         <form class="pink-intro-form" action="newsletter.html">
           <div class="form-stacked">
             <input aria-label="Email address" type="email" placeholder="Your email address" required>
-            <button type="submit" class="newsletter-submit-btn">Subscribe to our newsletter for powerful storytelling tips <b>→</b></button>
+            <button type="submit" class="newsletter-submit-btn">Subscribe to our newsletter <b>→</b></button>
           </div>
         </form>
       </div>
@@ -184,22 +184,25 @@
     </footer>
   </main>
 
-  <!-- Book a Call Pop-up Modal -->
-  <div id="book-call-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <!-- Free Storytelling Tips Pop-up Modal -->
+  <div id="book-call-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-desc">
     <div class="modal-card">
       <button class="modal-close" aria-label="Close dialog" type="button">&times;</button>
       <div class="modal-lotus" aria-hidden="true">
         <img src="assets/lotus-divider.png" alt="">
       </div>
-      <p class="modal-eyebrow"><img class="kicker-bird bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Ready for Clarity?</p>
-      <h2 id="modal-title">Work with Us</h2>
-      <p class="modal-desc">
-        Sign up for free storytelling tips.
+      <p id="modal-desc" class="modal-desc">
+        <img class="kicker-bird bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Sign up for weekly free storytelling tips.
       </p>
-      <div class="modal-actions">
-        <a class="modal-cta-link" href="mailto:coffee@mochastorylab.com?subject=Work%20with%20Us">Work with Us <b>→</b></a>
-        <button type="button" class="modal-dismiss-btn">Maybe later</button>
-      </div>
+      <form class="modal-form" id="modal-signup-form" action="#" onsubmit="event.preventDefault(); alert('Thank you for subscribing to weekly storytelling tips!'); document.querySelector('.modal-close').click();">
+        <div class="modal-input-wrap">
+          <input type="email" class="modal-email-input" placeholder="Enter your email address" required aria-label="Email address for storytelling tips">
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="modal-cta-btn">Sign Up <b>→</b></button>
+          <button type="button" class="modal-dismiss-btn">Maybe later</button>
+        </div>
+      </form>
     </div>
   </div>
 
