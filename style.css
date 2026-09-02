@@ -250,20 +250,18 @@ input {
   padding: 4px 4px 6px;
   background: transparent;
   border: none;
-  border-bottom: 2px solid var(--mocha);
   border-radius: 0;
   box-shadow: none;
   color: var(--mocha);
   font: 600 clamp(16px, 1.35vw, 18.5px) 'Playfair Display', serif;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-cta-link:hover {
   background: transparent;
   border: none;
-  border-bottom: 2px solid var(--rose);
   box-shadow: none;
   color: var(--rose);
   transform: translateX(3px);
@@ -625,9 +623,11 @@ input {
 
 .story-copy p:first-child:first-letter {
   float: left;
-  padding: 8px 10px 0 0;
+  font: 600 78px / 0.75 'Playfair Display', serif;
   color: var(--rose);
-  font: 600 72px / 0.78 'Playfair Display', serif;
+  margin-top: -3px;
+  margin-right: 12px;
+  padding: 0 2px 0 0;
 }
 
 /* Lotus Dividers */
@@ -988,7 +988,7 @@ input {
 
 /* Call / Consultancy Section */
 .call {
-  padding: 40px clamp(20px, 4vw, 40px);
+  padding: 55px clamp(20px, 4vw, 40px) 50px;
   text-align: center;
   background: var(--olive);
   color: var(--ivory);
@@ -997,19 +997,22 @@ input {
 .call .section-kicker {
   letter-spacing: 0.18em;
   font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .call .kicker-bird,
 .modal-eyebrow .kicker-bird {
-  height: clamp(38px, 4vw, 54px);
-  vertical-align: -8px;
-  margin-right: 12px !important;
+  height: clamp(32px, 3.2vw, 44px);
+  vertical-align: middle;
+  margin-right: 10px !important;
 }
 
 .call h2 {
-  max-width: 1050px;
-  margin: 20px auto 16px;
-  font: 500 clamp(42px, 5.5vw, 80px) / 1.06 'Playfair Display', serif;
+  max-width: 940px;
+  margin: 22px auto 18px;
+  font: 500 clamp(26px, 3.2vw, 42px) / 1.35 'Playfair Display', serif;
 }
 
 .call > p:not(.section-kicker) {

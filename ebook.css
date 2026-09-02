@@ -784,7 +784,7 @@ button, input {
 
 /* Call to action (Compact 40px padding) */
 .call {
-  padding: 40px clamp(20px, 4vw, 40px);
+  padding: 55px clamp(20px, 4vw, 40px) 50px;
   text-align: center;
   background: var(--olive);
   color: var(--ivory);
@@ -793,18 +793,21 @@ button, input {
 .call .section-kicker {
   letter-spacing: 0.18em;
   font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .call .kicker-bird {
-  height: clamp(38px, 4vw, 54px);
-  vertical-align: -8px;
-  margin-right: 12px !important;
+  height: clamp(32px, 3.2vw, 44px);
+  vertical-align: middle;
+  margin-right: 10px !important;
 }
 
 .call h2 {
-  max-width: 1050px;
-  margin: 20px auto 16px;
-  font: 500 clamp(42px, 5.5vw, 80px)/1.06 'Playfair Display', serif;
+  max-width: 940px;
+  margin: 22px auto 18px;
+  font: 500 clamp(26px, 3.2vw, 42px) / 1.35 'Playfair Display', serif;
 }
 
 .call > p:not(.section-kicker) {
