@@ -40,7 +40,7 @@
             <h3><img class="section-bird-badge bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Join The Mocha Newsletter</h3>
             <p>Read by founders, strategists, changemakers, and corporate leaders.</p>
           </div>
-          <form class="subscribe-form" action="#">
+          <form class="subscribe-form" action="#" onsubmit="event.preventDefault(); const email = document.getElementById('email-addr').value; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) }).then(res => res.json()).then(data => { if(data.message) { this.innerHTML = '<p style=\'color: #38170f; font-weight: bold; font-size: 18px; text-align: center; padding: 40px 10px;\'>✨ ' + data.message + ' Please check your inbox.</p>'; } else { alert(data.error); } }).catch(err => { alert('Failed to send playbook. Please try again later.'); });">
             <div class="form-grid">
               <div class="input-group">
                 <label for="first-name">Your Name</label>

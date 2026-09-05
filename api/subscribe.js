@@ -1,0 +1,61 @@
+const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
+
+export default async function handler(req, res) {
+  // Add CORS headers so it can be called from the frontend
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ error: 'Email is required' });
+  }
+
+  try {
+    const htmlTemplate = fs.readFileSync(path.join(process.cwd(), 'email-template.html'), 'utf-8');
+    const pdfPath = path.join(process.cwd(), 'mocha story lab playbook.pdf');
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.SMTP_EMAIL,
+        pass: process.env.SMTP_PASSWORD,
+      },
+    });
+
+    let info = await transporter.sendMail({
+      from: `"Mocha Storylab" <${process.env.SMTP_EMAIL}>`,
+      replyTo: process.env.SMTP_EMAIL,
+      to: email,
+      subject: "The 3 Stories Every Leader Must Tell - Your Playbook",
+      text: "Hello,\n\nThank you for requesting The 3 Stories Every Leader Must Tell.\n\nThis 15-minute playbook is trusted by teams at Google, Tata & Forbes. We've designed it to help you filter out the noise and transform your brand presence through the power of deliberate storytelling.\n\nYour PDF Playbook is attached to this email.\n\nBest regards,\nMocha Storylab",
+      html: htmlTemplate,
+      attachments: [
+        {
+          filename: 'mocha story lab playbook.pdf',
+          path: pdfPath
+        }
+      ]
+    });
+
+    return res.status(200).json({ message: 'Playbook sent successfully!' });
+  } catch (error) {
+    console.error("Error sending email: ", error);
+    return res.status(500).json({ error: 'Failed to send email' });
+  }
+}
