@@ -1213,9 +1213,10 @@ footer {
 
 .modal-micro-copy {
   margin: 6px 0 0;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
   font-family: 'DM Sans', sans-serif;
-  color: rgba(56, 23, 15, 0.7);
+  color: rgba(56, 23, 15, 0.78);
   text-align: center;
 }
 

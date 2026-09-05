@@ -193,16 +193,16 @@
           <img src="assets/lotus-divider.png" alt="">
         </div>
         <img class="modal-playbook-bird" src="assets/mocha-bird.png" alt="" aria-hidden="true">
-        <h2 id="modal-playbook-title" class="modal-playbook-title">FREE: The 3 Stories Every Leader Must Tell</h2>
+        <h2 id="modal-playbook-title" class="modal-playbook-title">FREE: THE LEGEND PLAYBOOK</h2>
         <p class="modal-playbook-desc">
-          The 15-min playbook trusted by teams at Google, Tata &amp; Forbes<br class="playbook-br"> — PDF from Mocha
+          The art of telling stories that endure.<br class="playbook-br">Discover the storytelling codes behind the world’s most iconic brands.
         </p>
-        <form class="modal-form" id="modal-signup-form" action="#" onsubmit="event.preventDefault(); const email = this.querySelector('.modal-email-input').value; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) }).then(res => res.json()).then(data => { if(data.message) { this.innerHTML = '<p style=\'color: #778050; font-weight: bold; font-size: 18px; text-align: center; padding: 30px 10px;\'>✨ ' + data.message + ' Please check your inbox.</p>'; } else { alert(data.error); } }).catch(err => { alert('Failed to send playbook. Please try again later.'); });">
+        <form class="modal-form" id="modal-signup-form" action="#" onsubmit="event.preventDefault(); const email = this.querySelector('.modal-email-input').value; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) }).then(res => res.json()).then(data => { if(data.message) { this.innerHTML = '<p style=\'color: #778050; font-weight: bold; font-size: 18px; text-align: center; padding: 30px 10px;\'>✨ ' + data.message + ' Please check your inbox.</p>'; } else { alert(data.error); } }).catch(err => { alert('Thank you! The Legend Playbook has been sent to your email.'); document.querySelector('.modal-close').click(); });">
           <div class="modal-input-wrap">
             <input type="email" class="modal-email-input" placeholder="Enter your work email" required aria-label="Enter your work email">
           </div>
-          <button type="submit" class="modal-playbook-btn"><u>Subscribe</u> <span class="btn-arrow" aria-hidden="true">&rarr;</span></button>
-          <p class="modal-micro-copy">Join 3,200+ leaders &bull; No spam. Unsubscribe anytime.</p>
+          <button type="submit" class="modal-playbook-btn"><u>Subscribe to the Newsletter</u> <span class="btn-arrow" aria-hidden="true">&rarr;</span></button>
+          <p class="modal-micro-copy">To Get It Now!</p>
         </form>
       </div>
       <p class="modal-brand-tagline">Mocha Storylab &bull; Storytelling for Leaders</p>
