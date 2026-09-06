@@ -152,7 +152,7 @@
     <div class="lotus-divider" aria-hidden="true"><span></span><img src="assets/lotus-divider.png" alt=""><span></span></div>
 
     <section id="partner" class="partner section">
-      <div><p class="section-kicker"><img class="kicker-bird bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Partner with us</p><h2>Mocha Ink Mag<br><em>&amp; Talks</em></h2></div>
+      <div><p class="section-kicker"><img class="kicker-bird bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Partner with us</p><h2>Mocha Ink Mag <em>&amp; Talks</em></h2></div>
       <div><p>Mocha is India’s first platform entirely devoted to perspective essays. It filters out the noise from the narrative and delivers the message via curated thoughts, opinion and conversations. A digital magazine and a live storytelling platform makes the MochaVerse.</p><a class="text-link" href="mailto:hello@mochastorylab.com?subject=Partnership enquiry">We hold spaces for your story →</a></div>
     </section>
 
@@ -193,7 +193,7 @@
           <img src="assets/lotus-divider.png" alt="">
         </div>
         <img class="modal-playbook-bird" src="assets/mocha-bird.png" alt="" aria-hidden="true">
-        <h2 id="modal-playbook-title" class="modal-playbook-title">FREE: THE LEGEND PLAYBOOK</h2>
+        <h2 id="modal-playbook-title" class="modal-playbook-title">Free: The Legend Playbook</h2>
         <p class="modal-playbook-desc">
           The art of telling stories that endure.<br class="playbook-br">Discover the storytelling codes behind the world’s most iconic brands.
         </p>
@@ -233,14 +233,39 @@
         }, 400);
       }
 
-      // Automatically show modal on every page load
-      if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        setTimeout(openModal, 800);
-      } else {
-        document.addEventListener('DOMContentLoaded', function() {
-          setTimeout(openModal, 800);
-        });
+      // Suppress modal if user navigated specifically to "Work with Us" (#book-call)
+      const isWorkWithUs = window.location.hash === '#book-call' || window.location.href.includes('#book-call');
+
+      if (!isWorkWithUs) {
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+          setTimeout(function() {
+            if (window.location.hash !== '#book-call') {
+              openModal();
+            }
+          }, 800);
+        } else {
+          document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+              if (window.location.hash !== '#book-call') {
+                openModal();
+              }
+            }, 800);
+          });
+        }
       }
+
+      // Close modal if user clicks on "Work with Us" on the page
+      document.querySelectorAll('a[href*="#book-call"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeModal();
+        });
+      });
+
+      window.addEventListener('hashchange', function() {
+        if (window.location.hash === '#book-call') {
+          closeModal();
+        }
+      });
 
       // Close triggers
       document.querySelectorAll('.modal-close, .modal-dismiss-btn').forEach(function(btn) {
