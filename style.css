@@ -800,9 +800,11 @@ input {
 
 .call > p:not(.section-kicker) {
   max-width: 750px;
-  margin: 0 auto 20px;
-  font-size: 18px;
-  line-height: 1.6;
+  margin: 10px auto 22px;
+  font: italic 500 clamp(22px, 2.3vw, 28px) / 1.45 'Playfair Display', serif;
+  color: var(--ivory);
+  opacity: 0.95;
+  letter-spacing: 0.01em;
 }
 
 .call-cta-link {
