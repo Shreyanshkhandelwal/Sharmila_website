@@ -228,7 +228,7 @@ input {
 }
 
 .hero-copy h1 {
-  margin: 24px 0 7px;
+  margin: 24px 0 16px;
   font: 500 clamp(52px, 5.5vw, 84px) / 1.02 'Playfair Display', serif;
 }
 
@@ -249,7 +249,7 @@ input {
 .hero-copy > p:not(.hero-italic) {
   max-width: 710px;
   margin: 0 auto;
-  font: 500 clamp(15px, 1.4vw, 19px) / 1.45 'Playfair Display', serif;
+  font: 500 clamp(16.5px, 1.55vw, 20.5px) / 1.5 'Playfair Display', serif;
 }
 
 .hero-cta-link {
@@ -569,11 +569,11 @@ input {
 
 .story-copy p:first-child:first-letter {
   float: left;
-  font: 600 78px / 0.75 'Playfair Display', serif;
+  font: 600 clamp(64px, 5vw, 76px) / 0.8 'Playfair Display', serif;
   color: var(--rose);
-  margin-top: -3px;
-  margin-right: 12px;
-  padding: 0 2px 0 0;
+  margin-top: 2px;
+  margin-right: 4px;
+  padding: 0;
 }
 
 /* Lotus Dividers */
@@ -1196,7 +1196,8 @@ footer {
   border-bottom: 2px solid var(--mocha);
   border-radius: 0;
   box-shadow: none;
-  font: 600 clamp(16px, 1.8vw, 18px) 'Playfair Display', serif;
+  font: 600 clamp(15.5px, 1.3vw, 17.5px) / 1.4 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -1360,7 +1361,7 @@ footer {
   }
 
   .section {
-    padding: 55px 20px;
+    padding: 42px 18px;
   }
 
   .section-heading {
@@ -1449,12 +1450,12 @@ footer {
   }
 
   .hero {
-    padding: 0 0 20px;
+    padding: 0 0 8px;
   }
 
   .hero-art {
-    height: 260px;
-    margin-bottom: 24px;
+    height: clamp(190px, 50vw, 240px);
+    margin-bottom: 12px;
   }
 
   .hero-art img {
@@ -1465,52 +1466,41 @@ footer {
   }
 
   .hero-copy {
-    padding: 0 20px;
+    padding: 0 16px;
     text-align: center;
   }
 
   .hero-copy h1 {
-    font-size: clamp(32px, 8.5vw, 42px);
-    line-height: 1.25;
-    margin: 0 0 16px;
-  }
-
-  .hero-copy .hero-italic {
-    font-size: clamp(16px, 4.5vw, 20px);
-    line-height: 1.45;
-    margin: 0 auto 16px !important;
-    word-spacing: 0.06em;
-    max-width: 480px;
+    font-size: clamp(30px, 8.2vw, 38px);
+    line-height: 1.18;
+    margin: 4px 0 10px;
   }
 
   .hero-copy > p:not(.hero-italic) {
-    font-size: 15px;
-    line-height: 1.65;
-    max-width: 480px;
-    margin: 0 auto 24px;
+    font-size: clamp(14.5px, 3.8vw, 16.5px);
+    line-height: 1.5;
+    max-width: 360px;
+    margin: 0 auto;
     opacity: 0.92;
   }
 
-  .hero-copy .button {
-    margin-top: 6px;
-    margin-bottom: 20px;
-    padding: 13px 28px;
+  .hero-cta-link {
+    margin-top: 12px;
+    margin-bottom: 4px;
+    padding: 4px 4px 6px;
     font-size: 15px;
-    gap: 16px;
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
+    gap: 8px;
   }
 
   .pink-intro {
-    padding: 36px 20px 32px;
-    margin: 28px 0 20px;
+    padding: 28px 18px 24px;
+    margin: 16px 0 14px;
     border-radius: 12px;
   }
 
   .pink-intro-content {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 16px;
     text-align: center;
   }
 
@@ -1616,6 +1606,13 @@ footer {
     line-height: 1.65;
   }
 
+  .story-copy p:first-child:first-letter {
+    font-size: clamp(52px, 12vw, 62px);
+    line-height: 0.82;
+    margin-top: 2px;
+    margin-right: 3px;
+  }
+
   .client-stories.section {
     padding-top: 32px;
     padding-bottom: 40px;
@@ -1699,14 +1696,14 @@ footer {
   }
 
   .lotus-divider {
-    height: 60px;
-    margin: 18px 0 14px;
+    height: 52px;
+    margin: 12px 0 10px;
     grid-template-columns: 1fr minmax(120px, 175px) 1fr;
     gap: 10px;
   }
 
   .lotus-divider img {
-    height: 48px;
+    height: 40px;
   }
 
   footer {
@@ -1758,11 +1755,15 @@ footer {
   }
 
   .modal-playbook-title {
-    font-size: 21px;
+    font-size: 22px;
+    margin: 0 auto 12px;
   }
 
-  .playbook-br {
-    display: none;
+  .modal-playbook-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 0 auto 16px;
+    max-width: 320px;
   }
 }
 

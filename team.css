@@ -478,11 +478,11 @@ button, input {
 
 .story-copy p:first-child:first-letter {
   float: left;
-  font: 600 78px / 0.75 'Playfair Display', serif;
+  font: 600 clamp(64px, 5vw, 76px) / 0.8 'Playfair Display', serif;
   color: var(--rose);
-  margin-top: -3px;
-  margin-right: 12px;
-  padding: 0 2px 0 0;
+  margin-top: 2px;
+  margin-right: 4px;
+  padding: 0;
 }
 
 /* Collective Grid */
@@ -1212,6 +1212,13 @@ footer {
     text-align: left;
     font-size: 15.5px;
     line-height: 1.65;
+  }
+
+  .story-copy p:first-child:first-letter {
+    font-size: clamp(52px, 12vw, 62px);
+    line-height: 0.82;
+    margin-top: 2px;
+    margin-right: 3px;
   }
 
   .collective.section {

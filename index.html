@@ -34,7 +34,6 @@
       </div>
       <div class="hero-copy">
         <h1>Tell It. <span>Earn Trust.</span></h1>
-        <p class="hero-italic">Transform your brand presence with power of storytelling.</p>
         <p>Once upon a time, your brand was just an idea. Now, it's time to make it a legend.</p>
         <a class="hero-cta-link" href="services.html">Here's What We Do <b>→</b></a>
       </div>
@@ -195,7 +194,8 @@
         <img class="modal-playbook-bird" src="assets/mocha-bird.png" alt="" aria-hidden="true">
         <h2 id="modal-playbook-title" class="modal-playbook-title">Free: The Legend Playbook</h2>
         <p class="modal-playbook-desc">
-          The art of telling stories that endure.<br class="playbook-br">Discover the storytelling codes behind the world’s most iconic brands.
+          The art of telling stories that endure.<br>
+          Discover the storytelling codes behind the world’s most iconic brands.
         </p>
         <form class="modal-form" id="modal-signup-form" action="#" onsubmit="event.preventDefault(); const email = this.querySelector('.modal-email-input').value; const phone = this.querySelector('.modal-phone-input').value; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, phone: phone }) }).then(res => res.json()).then(data => { if(data.message) { this.innerHTML = '<p style=\'color: #778050; font-weight: bold; font-size: 18px; text-align: center; padding: 30px 10px;\'>✨ ' + data.message + ' Please check your inbox.</p>'; } else { alert(data.error); } }).catch(err => { alert('Thank you! The Legend Playbook has been sent to your email.'); document.querySelector('.modal-close').click(); });">
           <div class="modal-input-wrap">
@@ -204,8 +204,7 @@
           <div class="modal-input-wrap">
             <input type="tel" class="modal-phone-input" placeholder="Enter your phone number" required aria-label="Enter your phone number">
           </div>
-          <button type="submit" class="modal-playbook-btn"><u>Subscribe to the Newsletter</u> <span class="btn-arrow" aria-hidden="true">&rarr;</span></button>
-          <p class="modal-micro-copy">To Get It Now!</p>
+          <button type="submit" class="modal-playbook-btn"><u>Download Now</u> <span class="btn-arrow" aria-hidden="true">&rarr;</span></button>
         </form>
       </div>
       <p class="modal-brand-tagline">Mocha Storylab &bull; Storytelling for Leaders</p>
