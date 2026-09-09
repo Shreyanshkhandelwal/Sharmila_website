@@ -28,7 +28,7 @@ export default async function handler(req, res) {
 
   try {
     const htmlTemplate = fs.readFileSync(path.join(process.cwd(), 'email-template.html'), 'utf-8');
-    const pdfPath = path.join(process.cwd(), 'mocha story lab playbook.pdf');
+    const pdfPath = path.join(process.cwd(), 'mocha_legend_playbook_booklet_updated.pdf');
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -47,7 +47,7 @@ export default async function handler(req, res) {
       html: htmlTemplate,
       attachments: [
         {
-          filename: 'mocha story lab playbook.pdf',
+          filename: 'mocha_legend_playbook_booklet_updated.pdf',
           path: pdfPath
         }
       ]
