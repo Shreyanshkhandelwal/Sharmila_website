@@ -37,8 +37,9 @@
 
         <div class="dispatch-form-box">
           <div class="form-header">
+            <p class="form-eyebrow">Sign up for The Mocha Dispatch</p>
             <h3><img class="section-bird-badge bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Join The Mocha Newsletter</h3>
-            <p>Read by founders, strategists, changemakers, and corporate leaders.</p>
+            <p class="form-desc">Read by founders, strategists, changemakers, and corporate leaders.</p>
           </div>
           <form class="subscribe-form" action="#" onsubmit="event.preventDefault(); const email = document.getElementById('email-addr').value; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email }) }).then(res => res.json()).then(data => { if(data.message) { this.innerHTML = '<p style=\'color: #38170f; font-weight: bold; font-size: 18px; text-align: center; padding: 40px 10px;\'>✨ ' + data.message + ' Please check your inbox.</p>'; } else { alert(data.error); } }).catch(err => { alert('Failed to send playbook. Please try again later.'); });">
             <div class="form-grid">
@@ -51,7 +52,7 @@
                 <input id="email-addr" type="email" placeholder="yourname@domain.com" required>
               </div>
             </div>
-            <button type="submit" class="submit-button">Subscribe to Newsletter <b>→</b></button>
+            <button type="submit" class="submit-button">Subscribe <b>→</b></button>
             <small class="form-note">✿ &nbsp; Delivered twice monthly. Respectful of your inbox. Unsubscribe anytime with one click.</small>
           </form>
         </div>

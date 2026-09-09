@@ -265,6 +265,17 @@ button, input {
   transform: scaleX(-1) rotate(-10deg) scale(1.15) !important;
 }
 
+.form-header .form-eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  word-spacing: 0.18em;
+  color: var(--mocha);
+  opacity: 0.85;
+}
+
 .form-header h3 {
   margin: 0 0 6px;
   font: 500 clamp(24px, 2.5vw, 32px) 'Playfair Display', serif;
@@ -272,7 +283,8 @@ button, input {
   align-items: center;
 }
 
-.form-header p {
+.form-header .form-desc,
+.form-header p:not(.form-eyebrow) {
   margin: 0 0 24px;
   font-size: 15px;
   opacity: 0.85;
@@ -974,6 +986,12 @@ footer {
     text-align: center;
   }
 
+  .form-header .form-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
   .form-header h3 {
     font-size: clamp(20px, 5.5vw, 26px);
     line-height: 1.2;
@@ -981,7 +999,8 @@ footer {
     word-spacing: 0.1em;
   }
 
-  .form-header p {
+  .form-header .form-desc,
+  .form-header p:not(.form-eyebrow) {
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 18px;
