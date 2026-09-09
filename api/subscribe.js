@@ -43,19 +43,13 @@ module.exports = async function handler(req, res) {
       replyTo: process.env.SMTP_EMAIL,
       to: email,
       subject: "The 3 Stories Every Leader Must Tell - Your Playbook",
-      text: "Hello,\n\nThank you for requesting The 3 Stories Every Leader Must Tell.\n\nThis 15-minute playbook is trusted by teams at Google, Tata & Forbes. We've designed it to help you filter out the noise and transform your brand presence through the power of deliberate storytelling.\n\nYour PDF Playbook is attached to this email.\n\nBest regards,\nMocha Storylab",
+      text: "Hello,\n\nThank you for requesting The 3 Stories Every Leader Must Tell.\n\nThis 15-minute playbook is trusted by teams at Google, Tata & Forbes. We've designed it to help you filter out the noise and transform your brand presence through the power of deliberate storytelling.\n\nYou can access your Playbook via this Google Drive link: https://drive.google.com/file/d/1U0R1gtOmBNDPbpMcYOIWQ4Mfv-fA1tb8/view?usp=sharing\n\nBest regards,\nMocha Storylab",
       html: htmlTemplate,
       headers: {
         'X-Priority': '1 (Highest)',
-        'X-Mailer': 'Apple Mail (2.3654.3.0)', // Spoof an organic mail client instead of Nodemailer
+        'X-Mailer': 'Apple Mail (2.3654.3.0)', 
         'Message-ID': `<${Date.now()}-${Math.random().toString(36).substring(2, 10)}@gmail.com>`
-      },
-      attachments: [
-        {
-          filename: 'mocha_legend_playbook_booklet_updated.pdf',
-          path: pdfPath
-        }
-      ]
+      }
     });
 
     return res.status(200).json({ message: 'Playbook sent successfully!' });
