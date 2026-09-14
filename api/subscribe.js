@@ -55,11 +55,19 @@ module.exports = async function handler(req, res) {
     // Option to record in Google Sheet if configured
     if (process.env.GOOGLE_SHEET_WEBAPP_URL) {
       try {
-        await fetch(process.env.GOOGLE_SHEET_WEBAPP_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, phone: req.body.phone || '' })
+        console.log("Sending data to Google Sheets URL...");
+        
+        // Use GET with query parameters to avoid POST redirect/auth drops
+        const sheetUrl = new URL(process.env.GOOGLE_SHEET_WEBAPP_URL);
+        sheetUrl.searchParams.append("email", email);
+        sheetUrl.searchParams.append("phone", req.body.phone || '');
+
+        const response = await fetch(sheetUrl.toString(), {
+          method: 'GET',
+          redirect: 'follow'
         });
+        
+        console.log("Google Sheets response status:", response.status);
       } catch (sheetError) {
         console.error("Error saving to Google Sheet: ", sheetError);
         // Continue regardless of sheet error so user still gets success response
