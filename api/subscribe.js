@@ -52,6 +52,20 @@ module.exports = async function handler(req, res) {
       }
     });
 
+    // Option to record in Google Sheet if configured
+    if (process.env.GOOGLE_SHEET_WEBAPP_URL) {
+      try {
+        await fetch(process.env.GOOGLE_SHEET_WEBAPP_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, phone: req.body.phone || '' })
+        });
+      } catch (sheetError) {
+        console.error("Error saving to Google Sheet: ", sheetError);
+        // Continue regardless of sheet error so user still gets success response
+      }
+    }
+
     return res.status(200).json({ message: 'Playbook sent successfully!' });
   } catch (error) {
     console.error("Error sending email: ", error);
