@@ -53,12 +53,12 @@ module.exports = async function handler(req, res) {
     });
 
     // Option to record in Google Sheet if configured
-    if (process.env.GOOGLE_SHEET_WEBAPP_URL) {
+    if (process.env.GOOGLE_SHEET_WEBAPP_URL && process.env.GOOGLE_SHEET_WEBAPP_URL.trim() !== '') {
       try {
         console.log("Sending data to Google Sheets URL...");
         
         // Use GET with query parameters to avoid POST redirect/auth drops
-        const sheetUrl = new URL(process.env.GOOGLE_SHEET_WEBAPP_URL);
+        const sheetUrl = new URL(process.env.GOOGLE_SHEET_WEBAPP_URL.trim());
         sheetUrl.searchParams.append("email", email);
         sheetUrl.searchParams.append("phone", req.body.phone || '');
 
@@ -72,6 +72,8 @@ module.exports = async function handler(req, res) {
         console.error("Error saving to Google Sheet: ", sheetError);
         // Continue regardless of sheet error so user still gets success response
       }
+    } else {
+      console.warn("GOOGLE_SHEET_WEBAPP_URL is not set in environment variables! Skipping sheet integration.");
     }
 
     return res.status(200).json({ message: 'Playbook sent successfully!' });
