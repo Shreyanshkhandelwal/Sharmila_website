@@ -64,7 +64,7 @@ module.exports = async function handler(req, res) {
 
         const response = await fetch(sheetUrl.toString(), {
           method: 'GET',
-          redirect: 'follow'
+          redirect: 'manual'
         });
         
         console.log("Google Sheets response status:", response.status);
