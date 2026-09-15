@@ -61,6 +61,7 @@ module.exports = async function handler(req, res) {
         const sheetUrl = new URL(process.env.GOOGLE_SHEET_WEBAPP_URL.trim());
         sheetUrl.searchParams.append("email", email);
         sheetUrl.searchParams.append("phone", req.body.phone || '');
+        sheetUrl.searchParams.append("source", req.body.source || 'Unknown');
 
         const response = await fetch(sheetUrl.toString(), {
           method: 'GET',
