@@ -6,6 +6,8 @@
   <meta name="description" content="The Mocha Dispatch — A fortnightly briefing on story architecture, strategic communications, and narrative leadership by Sharmila Bhowmick.">
   <title>The Mocha Dispatch — Newsletter | Mocha Storylab</title>
   <link rel="stylesheet" href="newsletter.css">
+  <link rel="stylesheet" href="sticky-cta.css">
+  <link rel="stylesheet" href="discovery-modal.css">
 </head>
 <body>
   <main>
@@ -185,5 +187,22 @@
       });
     })();
   </script>
+
+  <!-- Sticky Discovery Call CTA — opens the booking form modal. Always visible, independent of any popup/modal -->
+  <a
+    href="#"
+    class="mocha-sticky-cta"
+    aria-label="Book a 30 minute discovery call for brand storytelling solutions at @Rs 1999"
+  >
+    <svg class="mocha-sticky-cta__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="3.5" y="4.5" width="17" height="16" rx="2" stroke-width="1.6"/>
+      <path d="M3.5 9.5h17" stroke-width="1.6"/>
+      <path d="M8 3v3M16 3v3" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <span>Book Discovery Call</span>
+  </a>
+
+
+  <script src="discovery-modal.js"></script>
 </body>
 </html>

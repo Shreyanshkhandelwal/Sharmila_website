@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful — Mocha Story Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { display: flex; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 24px; }
+    .confirm-box {
+      max-width: 460px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 44px 36px;
+      box-shadow: 0 12px 40px rgba(56, 23, 15, 0.12);
+    }
+    .confirm-box img.logo { max-width: 200px; margin-bottom: 24px; }
+    .check-circle {
+      width: 56px; height: 56px; margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--olive);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .check-circle svg { width: 28px; height: 28px; stroke: #fffdf6; }
+    .confirm-box h1 { font-size: 26px; margin-bottom: 10px; }
+    .confirm-box p { color: var(--mocha); opacity: 0.85; margin-bottom: 8px; }
+    .back-home {
+      display: inline-block; margin-top: 26px;
+      font-family: 'Playfair Display', serif; font-weight: 600;
+      color: var(--rose); text-decoration: none;
+    }
+    .confirm-box p.status-pending { color: var(--rose); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="confirm-box">
+    <img class="logo" src="assets/mocha-banner-logo.png" alt="Mocha Story Lab">
+    <div class="check-circle" id="check-circle" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <h1 id="status-heading">Payment Successful</h1>
+    <p id="status-message">Your 30-minute Discovery Call for Brand Storytelling Solutions (Rs. 1,999) is booked.</p>
+    <p id="status-sub">Check your inbox — we've sent you a confirmation email with your WhatsApp group link.</p>
+    <a class="back-home" href="index.html">← Back to Mocha Story Lab</a>
+  </div>
+
+  <script>
+    // Only fires the booking emails once Razorpay has actually redirected here
+    // after a completed payment (razorpay_payment_id present in the URL).
+    // Requires: your Razorpay Payment Link (created via Dashboard, NOT the
+    // razorpay.me personal link) has "Enable Redirect" turned on, pointing to
+    // this page's live URL.
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var paymentId = params.get('razorpay_payment_id');
+      var statusMessage = document.getElementById('status-message');
+      var statusSub = document.getElementById('status-sub');
+      var statusHeading = document.getElementById('status-heading');
+
+      if (!paymentId) {
+        // No payment confirmation in the URL — don't send anything.
+        statusHeading.textContent = 'No Payment Detected';
+        statusMessage.textContent = "We couldn't confirm a completed payment for this visit.";
+        statusSub.textContent = 'If you just paid, please check your email in a few minutes or contact us directly.';
+        statusSub.classList.add('status-pending');
+        return;
+      }
+
+      var raw = sessionStorage.getItem('mocha_discovery_booking');
+      if (!raw) {
+        // Payment confirmed, but no local booking details found (e.g. different
+        // browser/device). Still show success; email won't include lead details.
+        statusSub.textContent = 'Payment received. Please WhatsApp or email us your details so we can confirm your slot.';
+        return;
+      }
+
+      var booking = JSON.parse(raw);
+      fetch('/api/book-discovery-call', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: booking.name,
+          phone: booking.phone,
+          email: booking.email,
+          requirement: booking.requirement,
+          razorpay_payment_id: paymentId
+        })
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data.success) {
+            statusSub.textContent = 'Payment received, but we had trouble sending your confirmation email. We\'ll follow up shortly.';
+          }
+          sessionStorage.removeItem('mocha_discovery_booking');
+        })
+        .catch(function () {
+          statusSub.textContent = 'Payment received, but we had trouble sending your confirmation email. We\'ll follow up shortly.';
+        });
+    })();
+  </script>
+</body>
+</html>
