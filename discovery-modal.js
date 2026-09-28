@@ -105,7 +105,7 @@
       // "Enable Redirect" turned on, pointing to your live
       // payment-successful.html URL). The razorpay.me personal link does
       // NOT support this redirect, so it can't be used here.
-      var RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/O5mJsr0';
+      var RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/O5mJsr0o';
       window.location.href = RAZORPAY_PAYMENT_LINK;
     });
   });
