@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 3005;
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
-app.all('/api/magazine', require('./api/magazine.js'));
 
 // Map the Vercel API endpoint to local express router
 app.post('/api/subscribe', async (req, res) => {
