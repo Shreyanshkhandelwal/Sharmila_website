@@ -58,8 +58,9 @@
     var submitBtn = document.getElementById('discovery-submit-btn');
     var errorEl = document.getElementById('discovery-error');
 
-    // Wire every sticky CTA on the page to open the modal
-    document.querySelectorAll('.mocha-sticky-cta').forEach(function (btn) {
+    // Wire the sticky CTA and every "Work with us" button to open the modal
+    // (the mailto href on "Work with us" stays as a no-JS fallback)
+    document.querySelectorAll('.mocha-sticky-cta, .call-cta-link').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         openModal(overlay);
@@ -105,7 +106,8 @@
       // "Enable Redirect" turned on, pointing to your live
       // payment-successful.html URL). The razorpay.me personal link does
       // NOT support this redirect, so it can't be used here.
-      var RAZORPAY_PAYMENT_LINK = 'https://rzp.io/rzp/O5mJsr0o';
+      var RAZORPAY_PAYMENT_LINK = 'https://pages.razorpay.com/pl_TgxlwLWOEOTSf8/view';
+
       window.location.href = RAZORPAY_PAYMENT_LINK;
     });
   });
