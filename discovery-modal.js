@@ -22,24 +22,24 @@
           '<form id="discovery-form">' +
             '<div class="discovery-field">' +
               '<label for="discovery-name">Name</label>' +
-              '<input type="text" id="discovery-name" name="name" required autocomplete="name">' +
+              '<input type="text" id="discovery-name" name="name" maxlength="120" required autocomplete="name">' +
             '</div>' +
             '<div class="discovery-field">' +
               '<label for="discovery-phone">Phone Number</label>' +
-              '<input type="tel" id="discovery-phone" name="phone" required autocomplete="tel">' +
+              '<input type="tel" id="discovery-phone" name="phone" maxlength="25" required autocomplete="tel">' +
             '</div>' +
             '<div class="discovery-field">' +
               '<label for="discovery-email">Email</label>' +
-              '<input type="email" id="discovery-email" name="email" required autocomplete="email">' +
+              '<input type="email" id="discovery-email" name="email" maxlength="254" required autocomplete="email">' +
             '</div>' +
             '<div class="discovery-field">' +
               '<label for="discovery-requirement">Your Requirement (1–2 lines)</label>' +
-              '<textarea id="discovery-requirement" name="requirement" required></textarea>' +
+              '<textarea id="discovery-requirement" name="requirement" maxlength="1000" required></textarea>' +
             '</div>' +
             '<button type="submit" class="discovery-submit" id="discovery-submit-btn">' +
               'Proceed to Payment' +
             '</button>' +
-            '<p class="discovery-error" id="discovery-error"></p>' +
+            '<p class="discovery-error" id="discovery-error" role="alert"></p>' +
           '</form>' +
         '</div>' +
       '</div>';
@@ -47,14 +47,23 @@
     return overlay;
   }
 
+  var previousFocus;
+  var previousOverflow;
   function openModal(overlay) {
+    if (overlay.classList.contains("is-open")) return;
+    previousFocus = document.activeElement;
+
+    previousOverflow = document.body.style.overflow;
     overlay.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    document.getElementById('discovery-name').focus();
   }
 
   function closeModal(overlay) {
     overlay.classList.remove('is-open');
-    document.body.style.overflow = '';
+    document.body.style.overflow = previousOverflow || '';
+    if (previousFocus) previousFocus.focus();
+    if (location.hash === '#book-call') history.replaceState(null, '', location.pathname + location.search);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -71,6 +80,18 @@
         e.preventDefault();
         openModal(overlay);
       });
+    });
+
+    function openFromLink() { if (location.hash === '#book-call') openModal(overlay); }
+    window.addEventListener('hashchange', openFromLink);
+    openFromLink();
+
+    overlay.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var fields = Array.from(overlay.querySelectorAll('button:not(:disabled), input, textarea'));
+      var first = fields[0], last = fields[fields.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
 
     closeBtn.addEventListener('click', function () { closeModal(overlay); });
@@ -105,7 +126,15 @@
       // Stash the form data locally (NOT sent to the server / no email yet).
       // payment-successful.html reads this back and only THEN sends the
       // booking emails, once Razorpay confirms the payment via redirect.
-      sessionStorage.setItem('mocha_discovery_booking', JSON.stringify(payload));
+      try {
+        sessionStorage.setItem('mocha_discovery_booking', JSON.stringify(payload));
+      } catch (error) {
+        errorEl.textContent = 'Please allow browser storage to continue with your booking.';
+        errorEl.classList.add('is-visible');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Proceed to Payment';
+        return;
+      }
 
       // ⚠️ Replace with your Razorpay Payment Link created via
       // Dashboard → Payment Links → Create (fixed amount ₹1,999, with

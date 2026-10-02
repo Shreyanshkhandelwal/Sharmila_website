@@ -83,7 +83,7 @@ module.exports = async function handler(req, res) {
 
     // Email to the customer
     const customerHtml = `
-      <p><strong>Book a 45 minutes discovery call for your brand storytelling solutions @ Rs 1999.</strong></p>
+      <p><strong>Book a 45-minute discovery call for your brand storytelling solutions @ Rs 1999.</strong></p>
       <p>Hi ${name || 'there'},</p>
       <p>Your payment of Rs. ${amountPaid} was successful and your 45-minute Discovery Call for Brand Storytelling Solutions is confirmed.</p>
       <p>Join our WhatsApp group here: <a href="${whatsappGroupLink}">${whatsappGroupLink}</a></p>

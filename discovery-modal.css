@@ -1,16 +1,16 @@
 /* Shared booking form, matching the supplied reference. */
 .discovery-overlay { position: fixed; inset: 0; background: rgb(0 0 0 / 55%); display: none; align-items: center; justify-content: center; z-index: 2147483600; padding: 20px; }
 .discovery-overlay.is-open { display: flex; }
-.discovery-modal { background: #fff; color: #111; border-radius: 10px; width: 100%; max-width: 510px; max-height: calc(100dvh - 40px); overflow-y: auto; position: relative; box-shadow: 0 20px 60px #0003; font-family: 'DM Sans', sans-serif; }
+.discovery-modal { background: #fff; color: #111; border: 1px solid #dedede; border-radius: 12px; width: 100%; max-width: 510px; max-height: calc(100dvh - 40px); overflow-y: auto; position: relative; box-shadow: 0 20px 60px #0003; font-family: 'DM Sans', sans-serif; }
 .discovery-modal__body { padding: 40px 34px 32px; }
 .discovery-modal__close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; color: #666; cursor: pointer; }
 .discovery-modal__kicker { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; line-height: 1.25; font-weight: 600; margin: 0 20px 4px 0; }
-.discovery-modal__price { font-size: 15px; font-weight: 600; color: #444; margin: 0 0 24px; }
+.discovery-modal__price { font-size: 15px; font-weight: 600; color: #444; margin: 0 0 24px; padding-bottom: 20px; border-bottom: 1px solid #e5e5e5; }
 .discovery-field { margin-bottom: 16px; text-align: left; }
 .discovery-field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-.discovery-field input, .discovery-field textarea { width: 100%; box-sizing: border-box; padding: 12px; min-height: 49px; border: 1px solid #bbb; border-radius: 4px; background: #fff; color: #111; font: inherit; }
+.discovery-field input, .discovery-field textarea { width: 100%; box-sizing: border-box; padding: 12px; min-height: 49px; border: 1px solid #bbb; border-radius: 4px; background: #fafafa; color: #111; font: inherit; }
 .discovery-field textarea { min-height: 75px; resize: vertical; }
-.discovery-submit { width: 100%; margin-top: 16px; padding: 16px; border: 1px solid #111; border-radius: 4px; background: #111; color: #fff; font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 600; cursor: pointer; }
+.discovery-submit { width: 100%; margin-top: 16px; padding: 16px; min-height: 56px; border: 1px solid #111; border-radius: 4px; background: #111; color: #fff; font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 600; cursor: pointer; }
 .discovery-submit:hover:not(:disabled) { background: #333; }
 .discovery-submit:disabled { opacity: .65; cursor: wait; }
 .discovery-modal :focus-visible { outline: 2px solid #111; outline-offset: 3px; }
