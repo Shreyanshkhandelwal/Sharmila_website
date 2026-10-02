@@ -13,29 +13,35 @@
     overlay.id = 'discovery-overlay';
     overlay.innerHTML =
       '<div class="discovery-modal" role="dialog" aria-modal="true" aria-labelledby="discovery-modal-title">' +
-        '<button type="button" class="discovery-modal__close" id="discovery-modal-close" aria-label="Close">&times;</button>' +
-        '<p class="discovery-modal__kicker" id="discovery-modal-title">Book a 30-Minute Discovery Call</p>' +
-        '<p class="discovery-modal__price">Brand Storytelling Solutions &middot; Rs. 1,999</p>' +
-        '<form id="discovery-form">' +
-          '<div class="discovery-field">' +
-            '<label for="discovery-name">Name</label>' +
-            '<input type="text" id="discovery-name" name="name" required>' +
-          '</div>' +
-          '<div class="discovery-field">' +
-            '<label for="discovery-phone">Phone Number</label>' +
-            '<input type="tel" id="discovery-phone" name="phone" required>' +
-          '</div>' +
-          '<div class="discovery-field">' +
-            '<label for="discovery-email">Email</label>' +
-            '<input type="email" id="discovery-email" name="email" required>' +
-          '</div>' +
-          '<div class="discovery-field">' +
-            '<label for="discovery-requirement">Your Requirement (1-2 lines)</label>' +
-            '<textarea id="discovery-requirement" name="requirement" required></textarea>' +
-          '</div>' +
-          '<button type="submit" class="discovery-submit" id="discovery-submit-btn">Proceed to Payment</button>' +
-          '<p class="discovery-error" id="discovery-error"></p>' +
-        '</form>' +
+        '<div class="discovery-modal__body">' +
+          '<button type="button" class="discovery-modal__close" id="discovery-modal-close" aria-label="Close">' +
+            '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' +
+          '</button>' +
+          '<h2 class="discovery-modal__kicker" id="discovery-modal-title">Book a 45-Minute Discovery Call</h2>' +
+          '<p class="discovery-modal__price">Brand Storytelling Solutions &middot; Rs. 1,999</p>' +
+          '<form id="discovery-form">' +
+            '<div class="discovery-field">' +
+              '<label for="discovery-name">Name</label>' +
+              '<input type="text" id="discovery-name" name="name" required autocomplete="name">' +
+            '</div>' +
+            '<div class="discovery-field">' +
+              '<label for="discovery-phone">Phone Number</label>' +
+              '<input type="tel" id="discovery-phone" name="phone" required autocomplete="tel">' +
+            '</div>' +
+            '<div class="discovery-field">' +
+              '<label for="discovery-email">Email</label>' +
+              '<input type="email" id="discovery-email" name="email" required autocomplete="email">' +
+            '</div>' +
+            '<div class="discovery-field">' +
+              '<label for="discovery-requirement">Your Requirement (1–2 lines)</label>' +
+              '<textarea id="discovery-requirement" name="requirement" required></textarea>' +
+            '</div>' +
+            '<button type="submit" class="discovery-submit" id="discovery-submit-btn">' +
+              'Proceed to Payment' +
+            '</button>' +
+            '<p class="discovery-error" id="discovery-error"></p>' +
+          '</form>' +
+        '</div>' +
       '</div>';
     document.body.appendChild(overlay);
     return overlay;
@@ -94,7 +100,7 @@
       }
 
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Redirecting to payment...';
+      submitBtn.innerHTML = '<span>Redirecting to payment...</span>';
 
       // Stash the form data locally (NOT sent to the server / no email yet).
       // payment-successful.html reads this back and only THEN sends the

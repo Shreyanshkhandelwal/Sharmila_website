@@ -1,137 +1,19 @@
-/* ==========================================================================
-   Discovery Call Booking Modal
-   Shared across all pages. Opened by the sticky CTA button.
-   ========================================================================== */
-
-.discovery-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(56, 23, 15, 0.55);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2147483600;
-  padding: 20px;
-}
-
-.discovery-overlay.is-open {
-  display: flex;
-}
-
-.discovery-modal {
-  background: var(--paper, #fffdf6);
-  border-radius: 8px;
-  max-width: 440px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 34px 30px 28px;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(56, 23, 15, 0.35);
-  font-family: 'DM Sans', sans-serif;
-  color: var(--mocha, #38170f);
-  animation: discovery-modal-pop 0.25s ease both;
-}
-
-@keyframes discovery-modal-pop {
-  from { transform: translateY(12px) scale(0.97); opacity: 0; }
-  to { transform: translateY(0) scale(1); opacity: 1; }
-}
-
-.discovery-modal__close {
-  position: absolute;
-  top: 14px;
-  right: 16px;
-  background: none;
-  border: none;
-  font-size: 22px;
-  line-height: 1;
-  cursor: pointer;
-  color: var(--mocha, #38170f);
-  opacity: 0.6;
-}
-
-.discovery-modal__close:hover { opacity: 1; }
-
-.discovery-modal__kicker {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: 21px;
-  margin: 0 0 4px;
-}
-
-.discovery-modal__price {
-  font-size: 14px;
-  color: var(--rose, #c95272);
-  font-weight: 600;
-  margin: 0 0 20px;
-}
-
-.discovery-field {
-  margin-bottom: 14px;
-  text-align: left;
-}
-
-.discovery-field label {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.discovery-field input,
-.discovery-field textarea {
-  width: 100%;
-  padding: 11px 12px;
-  border: 1px solid var(--line, rgba(56, 23, 15, 0.27));
-  border-radius: 4px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14.5px;
-  background: #ffffff;
-  color: var(--mocha, #38170f);
-}
-
-.discovery-field textarea {
-  resize: vertical;
-  min-height: 64px;
-}
-
-.discovery-field input:focus,
-.discovery-field textarea:focus {
-  outline: none;
-  border-color: var(--rose, #c95272);
-}
-
-.discovery-submit {
-  width: 100%;
-  margin-top: 10px;
-  padding: 13px;
-  border: 1px solid var(--mocha, #38170f);
-  border-radius: 4px;
-  background: var(--pink-soft, #f9d2d9);
-  color: var(--mocha, #38170f);
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.discovery-submit:hover:not(:disabled) {
-  background: var(--rose, #c95272);
-  color: #fffdf6;
-}
-
-.discovery-submit:disabled {
-  opacity: 0.65;
-  cursor: not-allowed;
-}
-
-.discovery-error {
-  color: #a3273f;
-  font-size: 13px;
-  margin-top: 10px;
-  display: none;
-}
-
+/* Shared booking form, matching the supplied reference. */
+.discovery-overlay { position: fixed; inset: 0; background: rgb(0 0 0 / 55%); display: none; align-items: center; justify-content: center; z-index: 2147483600; padding: 20px; }
+.discovery-overlay.is-open { display: flex; }
+.discovery-modal { background: #fff; color: #111; border-radius: 10px; width: 100%; max-width: 510px; max-height: calc(100dvh - 40px); overflow-y: auto; position: relative; box-shadow: 0 20px 60px #0003; font-family: 'DM Sans', sans-serif; }
+.discovery-modal__body { padding: 40px 34px 32px; }
+.discovery-modal__close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 0; background: transparent; color: #666; cursor: pointer; }
+.discovery-modal__kicker { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; line-height: 1.25; font-weight: 600; margin: 0 20px 4px 0; }
+.discovery-modal__price { font-size: 15px; font-weight: 600; color: #444; margin: 0 0 24px; }
+.discovery-field { margin-bottom: 16px; text-align: left; }
+.discovery-field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.discovery-field input, .discovery-field textarea { width: 100%; box-sizing: border-box; padding: 12px; min-height: 49px; border: 1px solid #bbb; border-radius: 4px; background: #fff; color: #111; font: inherit; }
+.discovery-field textarea { min-height: 75px; resize: vertical; }
+.discovery-submit { width: 100%; margin-top: 16px; padding: 16px; border: 1px solid #111; border-radius: 4px; background: #111; color: #fff; font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 600; cursor: pointer; }
+.discovery-submit:hover:not(:disabled) { background: #333; }
+.discovery-submit:disabled { opacity: .65; cursor: wait; }
+.discovery-modal :focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.discovery-error { display: none; font-size: 13px; color: #111; }
 .discovery-error.is-visible { display: block; }
+@media (max-width: 540px) { .discovery-modal__body { padding: 36px 22px 24px; } .discovery-modal__kicker { font-size: 21px; } }

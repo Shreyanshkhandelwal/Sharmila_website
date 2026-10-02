@@ -58,7 +58,7 @@ module.exports = async function handler(req, res) {
         amount: 199900, // Rs. 1,999.00 in paise
         currency: 'INR',
         accept_partial: false,
-        description: '30-Minute Discovery Call - Brand Storytelling Solutions',
+        description: '45-Minute Discovery Call - Brand Storytelling Solutions',
         customer: {
           name: name,
           email: email,

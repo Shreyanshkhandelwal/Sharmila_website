@@ -48,9 +48,9 @@ module.exports = async function handler(req, res) {
 
     // Email to the customer
     const customerHtml = `
-      <p><strong>Book a 30 minutes discovery call for your brand storytelling solutions @ Rs 1999.</strong></p>
+      <p><strong>Book a 45 minutes discovery call for your brand storytelling solutions @ Rs 1999.</strong></p>
       <p>Hi ${name},</p>
-      <p>Your payment of Rs. 1,999 is confirmed and your 30-minute Discovery Call for Brand Storytelling Solutions is booked!</p>
+      <p>Your payment of Rs. 1,999 is confirmed and your 45-minute Discovery Call for Brand Storytelling Solutions is booked!</p>
       <p>Join our WhatsApp group here: <a href="${whatsappGroupLink}">${whatsappGroupLink}</a></p>
       <p>We'll be in touch shortly to lock in your call time.</p>
       <p>Best regards,<br>Mocha Story Lab</p>
