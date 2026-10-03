@@ -25,7 +25,7 @@
         <img class="header-bird header-bird-green" src="assets/mocha-bird.png" alt="" aria-hidden="true">
       </div>
       <nav class="nav-right" aria-label="Resources navigation">
-        <a href="#book-call">Work with Us</a>
+        <a href="/book-call">Work with Us</a>
         <a href="team.html">Team</a>
       </nav>
     </header>
@@ -147,7 +147,7 @@
       <p class="section-kicker"><img class="kicker-bird bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Ready for clarity?</p>
       <h2>A brand has its own personality — a shape, form, colour, and behaviour.<br><em>Our storytelling brings that to life.</em></h2>
       <p>Let’s recreate your story.</p>
-      <a class="call-cta-link" href="mailto:coffee@mochastorylab.com?subject=Work%20with%20Us">Work with us <b>→</b></a>
+         <a class="call-cta-link" href="/book-call">Work with us <b>→</b></a>
     </section>
 
     <div class="lotus-divider" aria-hidden="true"><span></span><img src="assets/lotus-divider.png" alt=""><span></span></div>
@@ -235,19 +235,19 @@
       }
 
       // Suppress modal if user navigated specifically to "Work with Us" (#book-call)
-      const isWorkWithUs = window.location.hash === '#book-call' || window.location.href.includes('#book-call');
+      const isWorkWithUs = window.location.pathname.replace(/\/$/, '') === '/book-call' || window.location.hash === '#book-call';
 
       if (!isWorkWithUs) {
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
           setTimeout(function() {
-            if (window.location.hash !== '#book-call') {
+            if (window.location.pathname.replace(/\/$/, '') !== '/book-call' && window.location.hash !== '#book-call') {
               openModal();
             }
           }, 800);
         } else {
           document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
-              if (window.location.hash !== '#book-call') {
+              if (window.location.pathname.replace(/\/$/, '') !== '/book-call' && window.location.hash !== '#book-call') {
                 openModal();
               }
             }, 800);
@@ -256,7 +256,7 @@
       }
 
       // Close modal if user clicks on "Work with Us" on the page
-      document.querySelectorAll('a[href*="#book-call"]').forEach(function(link) {
+      document.querySelectorAll('a[href="/book-call"]').forEach(function(link) {
         link.addEventListener('click', function() {
           closeModal();
         });
@@ -325,7 +325,7 @@
         <path d="M8 3v3M16 3v3" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
     </span>
-    <span class="mocha-sticky-cta__text">Book Discovery Call</span>
+    <span class="mocha-sticky-cta__text">Clarity Begins Here.</span>
   </a>
 
 

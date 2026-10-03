@@ -73,16 +73,21 @@
     var submitBtn = document.getElementById('discovery-submit-btn');
     var errorEl = document.getElementById('discovery-error');
 
-    // Wire the sticky CTA and every "Work with us" button to open the modal
-    // (the mailto href on "Work with us" stays as a no-JS fallback)
-    document.querySelectorAll('.mocha-sticky-cta, .call-cta-link').forEach(function (btn) {
+    // Open booking links while leaving email links to their normal behavior.
+    document.querySelectorAll('.mocha-sticky-cta, a[href="/book-call"]').forEach(function (btn) {
       btn.addEventListener('click', function (e) {
         e.preventDefault();
+        if (btn.getAttribute('href') === '/book-call' && (location.pathname !== '/book-call' || location.hash)) history.pushState(null, '', '/book-call');
         openModal(overlay);
       });
     });
 
-    function openFromLink() { if (location.hash === '#book-call') openModal(overlay); }
+    function openFromLink() {
+      if (location.pathname.replace(/\/$/, '') === '/book-call' || location.hash === '#book-call') {
+        if (location.hash === '#book-call') history.replaceState(null, '', '/book-call' + location.search);
+        openModal(overlay);
+      }
+    }
     window.addEventListener('hashchange', openFromLink);
     openFromLink();
 

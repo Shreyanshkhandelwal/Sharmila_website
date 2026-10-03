@@ -1,7 +1,69 @@
-/* Shared discovery-call button, matching the black-and-white reference. */
-.mocha-sticky-cta { position: fixed; right: 24px; bottom: 24px; z-index: 2147483000; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 26px; background: #111; color: #fff; border: 1px solid #111; border-radius: 4px; text-decoration: none; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: 18px; box-shadow: 0 6px 18px #0003; cursor: pointer; }
-.mocha-sticky-cta:hover { background: #333; }
-.mocha-sticky-cta:focus-visible { outline: 2px solid #111; outline-offset: 4px; }
-.mocha-sticky-cta__icon-wrap { display: inline-flex; }
-.mocha-sticky-cta__icon { width: 18px; height: 18px; stroke: currentColor; }
-@media (max-width: 640px) { .mocha-sticky-cta { left: 12px; right: 12px; bottom: 12px; padding: 14px; font-size: 16px; } }
+/* Sticky discovery-call button: pill style */
+.mocha-sticky-cta {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 14px 32px 14px 28px;
+  background: #97a574;
+  color: #fbf8ed;
+  border: 2.5px solid #3b4a22;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(59, 74, 34, 0.25);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* vertical bar on the left */
+.mocha-sticky-cta::before {
+  content: '';
+  width: 2px;
+  height: 1.5em;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* arrow on the right */
+.mocha-sticky-cta::after {
+  content: '→';
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+  transition: transform 0.2s ease;
+}
+
+/* old calendar icon is no longer needed */
+.mocha-sticky-cta__icon-wrap { display: none; }
+
+.mocha-sticky-cta:hover {
+  background: #889865;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(59, 74, 34, 0.3);
+}
+.mocha-sticky-cta:hover::after { transform: translateX(4px); }
+
+.mocha-sticky-cta:focus-visible {
+  outline: 2px solid #3b4a22;
+  outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .mocha-sticky-cta {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 14px 22px;
+    font-size: 19px;
+    gap: 14px;
+  }
+}

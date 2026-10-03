@@ -3,5 +3,8 @@
     "api/**/*.js": {
       "includeFiles": "*{.html,.pdf}"
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/book-call", "destination": "/index.html" }
+  ]
 }
