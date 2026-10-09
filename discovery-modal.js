@@ -17,8 +17,8 @@
           '<button type="button" class="discovery-modal__close" id="discovery-modal-close" aria-label="Close">' +
             '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>' +
           '</button>' +
-          '<h2 class="discovery-modal__kicker" id="discovery-modal-title">Book a 45-Minute Discovery Call</h2>' +
-          '<p class="discovery-modal__price">Brand Storytelling Solutions &middot; Rs. 1,999</p>' +
+          '<h2 class="discovery-modal__kicker" id="discovery-modal-title">Book a 45-Minute</h2>' +
+          '<p class="discovery-modal__price">1:1 call for expert insights | INR 1,999.</p>' +
           '<form id="discovery-form">' +
             '<div class="discovery-field">' +
               '<label for="discovery-name">Name</label>' +
