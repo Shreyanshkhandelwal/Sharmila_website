@@ -43,7 +43,7 @@ module.exports = async function handler(req, res) {
       replyTo: process.env.SMTP_EMAIL,
       to: email,
       subject: "The 3 Stories Every Leader Must Tell - Your Playbook",
-      text: "Hello,\n\nThank you for requesting The 3 Stories Every Leader Must Tell.\n\nThis 15-minute playbook is trusted by teams at Google, Tata & Forbes. We've designed it to help you filter out the noise and transform your brand presence through the power of deliberate storytelling.\n\nYou can access your Playbook via this Google Drive link: https://drive.google.com/file/d/1U0R1gtOmBNDPbpMcYOIWQ4Mfv-fA1tb8/view?usp=sharing\n\nBest regards,\nMocha Storylab",
+      text: "Hello,\n\nThank you for requesting The 3 Stories Every Leader Must Tell.\n\nThis 15-minute playbook is trusted by teams at Google, Tata & Forbes. We've designed it to help you filter out the noise and transform your brand presence through the power of deliberate storytelling.\n\nYou can access your Playbook via this Google Drive link: https://drive.google.com/file/d/1U0R1gtOmBNDPbpMcYOIWQ4Mfv-fA1tb8/view?usp=sharing\n\nBest regards,\nMocha Story lab",
       html: htmlTemplate,
       headers: {
         'X-Priority': '1 (Highest)',
