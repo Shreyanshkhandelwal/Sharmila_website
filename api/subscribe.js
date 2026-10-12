@@ -39,7 +39,7 @@ module.exports = async function handler(req, res) {
     });
 
     let info = await transporter.sendMail({
-      from: `"Mocha Storylab" <${process.env.SMTP_EMAIL}>`,
+      from: `"Mocha Story lab" <${process.env.SMTP_EMAIL}>`,
       replyTo: process.env.SMTP_EMAIL,
       to: email,
       subject: "The 3 Stories Every Leader Must Tell - Your Playbook",
