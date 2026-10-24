@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3005;
 app.use(cors());
 app.use(express.json());
 app.get('/book-call', (req, res) => res.sendFile(require('path').join(__dirname, 'index.html')));
+app.get('/experience', (req, res) => res.sendFile(require('path').join(__dirname, 'experience.html')));
+app.get('/events', (req, res) => res.sendFile(require('path').join(__dirname, 'experience.html')));
 app.use(express.static(__dirname));
 
 // Map the Vercel API endpoint to local express router

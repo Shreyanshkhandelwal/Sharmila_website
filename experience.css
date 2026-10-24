@@ -1,0 +1,1330 @@
+/* ==========================================================================
+   Mocha Story Lab: Experience Section Styles
+   Theme: Warm Ivory, Cream, Soft Pink & Rich Mocha (Matches Entire Site)
+   ========================================================================== */
+
+/* Experience Color Variables & Tokens - Inherits & Aligns with Site Tokens */
+:root {
+  --exp-bg: var(--ivory, #fbf8ed);
+  --exp-paper: var(--paper, #fffdf6);
+  --exp-mocha: var(--mocha, #38170f);
+  --exp-pink: var(--pink, #f3aebc);
+  --exp-pink-soft: var(--pink-soft, #f9d2d9);
+  --exp-rose: var(--rose, #c95272);
+  --exp-olive: var(--olive, #778050);
+  --exp-olive-hover: #889865;
+  --exp-olive-border: #3b4a22;
+  --exp-line: rgba(56, 23, 15, 0.2);
+  --exp-card-border: var(--mocha, #38170f);
+  --exp-card-shadow: 4px 4px 0 var(--mocha, #38170f);
+  --exp-card-shadow-lg: 5px 5px 0 var(--mocha, #38170f);
+  --exp-card-shadow-hover: 7px 7px 0 var(--mocha, #38170f);
+}
+
+/* Base Container: Fits Naturally into Page Flow with Website Cream Background */
+.experience-theatrical-band {
+  position: relative;
+  background: var(--exp-bg);
+  color: var(--exp-mocha);
+  padding: 85px 0 105px;
+  overflow: hidden;
+}
+
+.exp-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+/* Italic Pink / Rose Accent Word */
+.exp-italic-pink {
+  font-style: italic !important;
+  color: var(--exp-rose) !important;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+}
+
+/* Signature Olive Pill CTA Button ("Create an Experience →" & "Let's Design Yours →") */
+.exp-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 13px 32px 13px 28px;
+  background: var(--exp-olive);
+  color: #fbf8ed;
+  border: 2.5px solid var(--exp-olive-border);
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(17px, 1.35vw, 21px);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  box-shadow: 3px 3px 0 var(--exp-mocha);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  position: relative;
+}
+
+.exp-pill-btn::before {
+  content: '';
+  width: 2px;
+  height: 1.35em;
+  background: currentColor;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.exp-pill-btn::after {
+  content: '→';
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  transition: transform 0.2s ease;
+}
+
+.exp-pill-btn:hover {
+  background: var(--exp-olive-hover);
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--exp-mocha);
+  color: #fffdf6;
+}
+
+.exp-pill-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 1: Hero ("Mocha Story Lab presents")
+   -------------------------------------------------------------------------- */
+.exp-hero-block {
+  text-align: center;
+  padding: 10px 0 60px;
+}
+
+.exp-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: clamp(11.5px, 1.1vw, 13px);
+  font-weight: 600;
+  color: var(--exp-rose);
+  margin-bottom: 16px;
+}
+
+.exp-hero-bird {
+  height: clamp(24px, 2.5vw, 32px);
+  width: auto;
+  filter: drop-shadow(1px 2px 3px rgba(56, 23, 15, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.exp-hero-eyebrow:hover .exp-hero-bird {
+  transform: rotate(-12deg) scale(1.15);
+}
+
+.exp-hero-title {
+  margin: 0 auto;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(58px, 9.5vw, 128px);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  color: var(--exp-mocha);
+  text-transform: uppercase;
+}
+
+.exp-hero-tagline {
+  margin: 22px auto 34px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(19px, 2.1vw, 28px);
+  line-height: 1.35;
+  color: var(--exp-mocha);
+  opacity: 0.9;
+  max-width: 740px;
+}
+
+.exp-hero-cta-wrap {
+  margin-bottom: 48px;
+}
+
+/* Slow Infinite Marquee of Event Ticket Stubs */
+.exp-marquee-wrapper {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 16px 0 28px;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.exp-marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: expMarqueeScroll 52s linear infinite;
+}
+
+.exp-marquee-wrapper:hover .exp-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes expMarqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Vintage Ticket Stub Event Card (Website Theme: Paper with Mocha Border & Offset Shadow) */
+.exp-ticket-stub {
+  position: relative;
+  display: flex;
+  width: 395px;
+  height: 165px;
+  background: var(--exp-paper);
+  color: var(--exp-mocha);
+  border-radius: 8px;
+  border: 1.5px solid var(--exp-mocha);
+  box-shadow: 4px 4px 0 var(--exp-mocha);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.exp-ticket-stub:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 7px 0 var(--exp-mocha);
+}
+
+.exp-ticket-img-wrap {
+  position: relative;
+  width: 135px;
+  height: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-right: 1.5px dashed var(--exp-line);
+}
+
+.exp-ticket-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.15) contrast(1.05);
+  transition: transform 0.4s ease;
+}
+
+.exp-ticket-stub:hover .exp-ticket-img-wrap img {
+  transform: scale(1.08);
+}
+
+.exp-ticket-body {
+  flex: 1;
+  padding: 14px 18px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.exp-ticket-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--exp-rose);
+}
+
+.exp-ticket-body h4 {
+  margin: 6px 0 4px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.22;
+  color: var(--exp-mocha);
+  font-weight: 600;
+}
+
+.exp-ticket-body p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: rgba(56, 23, 15, 0.78);
+}
+
+.exp-ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--exp-olive);
+  border-top: 1px solid var(--exp-line);
+  padding-top: 6px;
+}
+
+/* Ticket Side Cutout Notches with border matching section background */
+.exp-ticket-stub::before,
+.exp-ticket-stub::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--exp-bg);
+  border: 1.5px solid var(--exp-mocha);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.exp-ticket-stub::before { left: -8px; }
+.exp-ticket-stub::after { right: -8px; }
+
+/* --------------------------------------------------------------------------
+   BLOCK 2: Manifesto (Scroll-Triggered Editorial Reveal)
+   -------------------------------------------------------------------------- */
+.exp-manifesto-block {
+  padding: 80px 0 90px;
+  text-align: center;
+  border-top: 1px solid var(--exp-line);
+  border-bottom: 1px solid var(--exp-line);
+}
+
+.exp-manifesto-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.exp-manifesto-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--exp-rose);
+  margin-bottom: 32px;
+}
+
+.exp-manifesto-sentence {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(22px, 2.6vw, 35px);
+  line-height: 1.45;
+  color: var(--exp-mocha);
+  margin-bottom: 26px;
+  opacity: 0.22;
+  transform: translateY(18px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exp-manifesto-sentence.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exp-manifesto-lead {
+  font-size: clamp(26px, 3.1vw, 40px);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 3: Types of Experience (4 Cards in "We Write / We Create" Style)
+   -------------------------------------------------------------------------- */
+.exp-types-block {
+  padding: 95px 0 85px;
+}
+
+.exp-section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 52px;
+}
+
+.exp-eyebrow-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--exp-rose);
+  margin-bottom: 12px;
+}
+
+.exp-section-header h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(36px, 4.2vw, 56px);
+  line-height: 1.1;
+  color: var(--exp-mocha);
+  margin: 0 0 14px;
+}
+
+.exp-section-header h2 em {
+  color: var(--exp-rose);
+  font-style: italic;
+}
+
+.exp-section-sub {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.45;
+  color: rgba(56, 23, 15, 0.82);
+  margin: 0;
+}
+
+/* 4-Card Grid in Site Style */
+.exp-cards-slider-wrap {
+  width: 100%;
+}
+
+.exp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  width: 100%;
+}
+
+/* Card in "We Write / We Create" Style (Paper + Mocha Border + Offset Shadow) */
+.exp-card {
+  position: relative;
+  background: var(--exp-paper);
+  color: var(--exp-mocha);
+  border: 1.5px solid var(--exp-mocha);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 var(--exp-mocha);
+  min-height: 470px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 8px 8px 0 var(--exp-mocha);
+}
+
+/* Parrot Peeking In Animation on Hover */
+.exp-card-parrot-peek {
+  position: absolute;
+  top: -46px;
+  right: 18px;
+  width: 48px;
+  height: auto;
+  z-index: 10;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(1px 2px 4px rgba(56, 23, 15, 0.2));
+  pointer-events: none;
+}
+
+.exp-card:hover .exp-card-parrot-peek {
+  transform: translateY(58px) rotate(-10deg);
+}
+
+.exp-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  background: var(--exp-paper);
+  transition: background 0.35s ease;
+}
+
+/* Photo Layer Revealed on Hover with Warm Editorial Vignette */
+.exp-card-photo-reveal {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+}
+
+.exp-card-photo-reveal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.2) contrast(1.05);
+}
+
+.exp-card-photo-reveal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 253, 246, 0.88) 0%, rgba(251, 248, 237, 0.95) 100%);
+}
+
+.exp-card:hover .exp-card-inner {
+  background: transparent;
+}
+
+.exp-card:hover .exp-card-photo-reveal {
+  opacity: 1;
+}
+
+.exp-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--exp-rose);
+  text-transform: uppercase;
+}
+
+.exp-card-number {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  opacity: 0.85;
+}
+
+.exp-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 25px;
+  line-height: 1.15;
+  color: var(--exp-mocha);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.exp-card-oneliner {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--exp-rose);
+  margin: 0 0 16px;
+  font-weight: 500;
+}
+
+.exp-card-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(56, 23, 15, 0.85);
+  margin: 0 0 20px;
+}
+
+.exp-card-list {
+  list-style: none;
+  padding: 16px 0 0;
+  margin: auto 0 0;
+  border-top: 1px solid var(--exp-line);
+}
+
+.exp-card-list li {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: rgba(56, 23, 15, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exp-card-list li::before {
+  content: '✦';
+  font-size: 9px;
+  color: var(--exp-rose);
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 4: "Beyond Visibility" Statement (Split Layout)
+   -------------------------------------------------------------------------- */
+.exp-beyond-block {
+  padding: 90px 0;
+  border-top: 1px solid var(--exp-line);
+  border-bottom: 1px solid var(--exp-line);
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-beyond-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1.4fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+}
+
+/* Left Ghost "Visibility" */
+.exp-beyond-left {
+  text-align: right;
+  position: relative;
+}
+
+.exp-beyond-ghost {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(52px, 6.8vw, 98px);
+  line-height: 0.95;
+  color: rgba(56, 23, 15, 0.16);
+  margin: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+.exp-beyond-subline {
+  margin-top: 12px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--exp-rose);
+  font-weight: 600;
+}
+
+/* Center Dividing Line */
+.exp-beyond-divider {
+  width: 1px;
+  height: 130px;
+  background: linear-gradient(180deg, transparent, var(--exp-line), transparent);
+  position: relative;
+}
+
+.exp-beyond-divider::before {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--exp-rose);
+  font-size: 13px;
+  background: var(--exp-bg);
+  padding: 4px;
+}
+
+/* Right "Felt. Remembered. Talked about." with Sliding Parrot */
+.exp-beyond-right {
+  position: relative;
+  padding-right: 60px;
+}
+
+.exp-beyond-tagline-kicker {
+  font-size: 11.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--exp-rose);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.exp-beyond-headline-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.exp-beyond-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.15;
+  margin: 0 0 16px;
+  color: var(--exp-rose);
+}
+
+.exp-beyond-copy {
+  font-size: clamp(15.5px, 1.25vw, 18px);
+  line-height: 1.6;
+  color: rgba(56, 23, 15, 0.85);
+  max-width: 540px;
+  margin: 0;
+}
+
+/* Parrot Sliding in at the "Felt. Remembered." line */
+.exp-sliding-parrot {
+  position: absolute;
+  right: -55px;
+  top: 50%;
+  width: clamp(48px, 4.8vw, 70px);
+  height: auto;
+  transform: translateY(-50%) translateX(65px);
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease;
+  filter: drop-shadow(1px 2px 4px rgba(56, 23, 15, 0.15));
+  pointer-events: none;
+}
+
+.exp-beyond-block.parrot-active .exp-sliding-parrot {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 5: Past Experiences Gallery (Staggered Grid & Lightbox)
+   -------------------------------------------------------------------------- */
+.exp-gallery-block {
+  padding: 95px 0 85px;
+}
+
+.exp-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 46px;
+}
+
+/* Gallery Event Card */
+.exp-gallery-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 var(--exp-mocha);
+  border: 1.5px solid var(--exp-mocha);
+  background: var(--exp-paper);
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.exp-gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 7px 7px 0 var(--exp-mocha);
+}
+
+.exp-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.12) contrast(1.05);
+  transition: transform 0.5s ease;
+}
+
+.exp-gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Caption Overlay: Semi-transparent paper card with blur & mocha border */
+.exp-gallery-overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: rgba(255, 253, 246, 0.94);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--exp-line);
+  padding: 18px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.25s ease;
+}
+
+.exp-gallery-item:hover .exp-gallery-overlay {
+  background: rgba(255, 253, 246, 0.98);
+}
+
+.exp-gallery-tag {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--exp-rose);
+  margin-bottom: 5px;
+}
+
+.exp-gallery-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.25;
+  color: var(--exp-mocha);
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.exp-gallery-view-hint {
+  font-size: 11.5px;
+  color: var(--exp-olive);
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Lightbox Modal (Aligned with Website Modal Theme) */
+.exp-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(56, 23, 15, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 2147483600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.exp-lightbox-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.exp-lightbox-modal {
+  position: relative;
+  background: var(--exp-paper);
+  border: 2px solid var(--exp-mocha);
+  border-radius: 12px;
+  max-width: 940px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 10px 10px 0 var(--exp-mocha);
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+}
+
+.exp-lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: var(--exp-pink-soft);
+  border: 1px solid var(--exp-mocha);
+  color: var(--exp-mocha);
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.exp-lightbox-close:hover {
+  background: var(--exp-pink);
+  transform: scale(1.1);
+}
+
+.exp-lightbox-image-wrap {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  background: #fbf8ed;
+}
+
+.exp-lightbox-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.exp-lightbox-details {
+  padding: 34px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  background: var(--exp-paper);
+}
+
+.exp-lightbox-tag {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--exp-rose);
+  margin-bottom: 10px;
+}
+
+.exp-lightbox-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--exp-mocha);
+  margin: 0 0 14px;
+}
+
+.exp-lightbox-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(56, 23, 15, 0.85);
+  margin: 0 0 24px;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 6: Upcoming & Past Events (Event Content Cards & Tabs)
+   -------------------------------------------------------------------------- */
+.exp-events-block {
+  padding: 95px 0 85px;
+  border-top: 1px solid var(--exp-line);
+}
+
+.exp-events-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.exp-tab-btn {
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1.5px solid var(--exp-mocha);
+  color: var(--exp-mocha);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.exp-tab-btn:hover {
+  background: rgba(56, 23, 15, 0.05);
+}
+
+.exp-tab-btn.is-active {
+  background: var(--exp-pink-soft);
+  border-color: var(--exp-mocha);
+  color: var(--exp-mocha);
+  font-weight: 600;
+  box-shadow: 3px 3px 0 var(--exp-mocha);
+}
+
+.exp-events-table-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.exp-tab-panel {
+  display: none;
+}
+
+.exp-tab-panel.is-active {
+  display: block;
+  animation: fadeInPanel 0.3s ease;
+}
+
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Event Content Card Row */
+.exp-event-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px 170px;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 26px;
+  background: var(--exp-paper);
+  border: 1.5px solid var(--exp-mocha);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--exp-mocha);
+  margin-bottom: 16px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.exp-event-row:hover {
+  transform: translateX(4px) translateY(-2px);
+  box-shadow: 6px 6px 0 var(--exp-mocha);
+}
+
+.exp-event-date {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--exp-rose);
+}
+
+.exp-event-name-col h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.25;
+  color: var(--exp-mocha);
+  margin: 0 0 4px;
+}
+
+.exp-event-name-col p {
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(56, 23, 15, 0.75);
+  margin: 0;
+}
+
+.exp-event-city {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--exp-olive);
+}
+
+.exp-event-action-link {
+  text-align: right;
+}
+
+/* Event Action Button matching website style */
+.exp-event-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--exp-pink-soft);
+  color: var(--exp-mocha);
+  border: 1.5px solid var(--exp-mocha);
+  border-radius: 999px;
+  box-shadow: 2px 2px 0 var(--exp-mocha);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.exp-event-btn:hover {
+  background: var(--exp-pink);
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 var(--exp-mocha);
+}
+
+/* "Be First to Know" Newsletter Box (Soft Pink theme matching .pink-intro) */
+.exp-events-notice-box {
+  max-width: 960px;
+  margin: 36px auto 0;
+  padding: 28px 32px;
+  background: var(--exp-pink-soft);
+  border: 1.5px solid var(--exp-mocha);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 var(--exp-mocha);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+.exp-notice-text h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 21px;
+  color: var(--exp-mocha);
+  margin: 0 0 6px;
+}
+
+.exp-notice-text p {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(56, 23, 15, 0.85);
+  margin: 0;
+}
+
+.exp-notice-form {
+  display: flex;
+  gap: 10px;
+}
+
+.exp-notice-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1.5px solid var(--exp-mocha);
+  background: var(--exp-paper);
+  color: var(--exp-mocha);
+  font-size: 13.5px;
+  outline: none;
+}
+
+.exp-notice-input:focus {
+  border-color: var(--exp-rose);
+}
+
+.exp-notice-submit {
+  padding: 12px 20px;
+  border-radius: 6px;
+  background: var(--exp-mocha);
+  color: #fffdf6;
+  border: 1.5px solid var(--exp-mocha);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 2px 2px 0 var(--exp-mocha);
+  transition: all 0.2s ease;
+}
+
+.exp-notice-submit:hover {
+  background: var(--exp-rose);
+  border-color: var(--exp-rose);
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 var(--exp-mocha);
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 7: Our Approach (Timeline)
+   -------------------------------------------------------------------------- */
+.exp-approach-block {
+  padding: 95px 0 85px;
+  border-top: 1px solid var(--exp-line);
+}
+
+.exp-timeline-wrap {
+  position: relative;
+  margin-top: 56px;
+}
+
+/* Horizontal connecting line on desktop */
+.exp-timeline-line {
+  position: absolute;
+  top: 36px;
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background: var(--exp-line);
+  z-index: 1;
+}
+
+.exp-timeline-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.exp-step-node {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.exp-step-badge {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+  background: var(--exp-paper);
+  border: 2px solid var(--exp-mocha);
+  box-shadow: 4px 4px 0 var(--exp-mocha);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--exp-mocha);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.exp-step-node:hover .exp-step-badge {
+  transform: scale(1.1);
+  background: var(--exp-pink-soft);
+}
+
+.exp-step-icon {
+  font-size: 20px;
+  color: var(--exp-rose);
+  margin-bottom: 2px;
+}
+
+.exp-step-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 23px;
+  color: var(--exp-mocha);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.exp-step-copy {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(56, 23, 15, 0.82);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   BLOCK 8: Closing Call to Action ("Make your brand felt.")
+   -------------------------------------------------------------------------- */
+.exp-closing-block {
+  padding: 90px 0 30px;
+  text-align: center;
+  position: relative;
+}
+
+.exp-closing-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.exp-closing-bird {
+  height: clamp(38px, 4vw, 52px);
+  width: auto;
+  margin-bottom: 16px;
+  filter: drop-shadow(1px 2px 3px rgba(56, 23, 15, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.exp-closing-bird:hover {
+  transform: rotate(-10deg) scale(1.15);
+}
+
+.exp-closing-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(42px, 5.5vw, 74px);
+  line-height: 1.05;
+  color: var(--exp-mocha);
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+
+.exp-closing-copy {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(17px, 1.7vw, 23px);
+  line-height: 1.45;
+  color: rgba(56, 23, 15, 0.85);
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .exp-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exp-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exp-beyond-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .exp-beyond-left {
+    text-align: center;
+  }
+
+  .exp-beyond-divider {
+    display: none;
+  }
+
+  .exp-beyond-right {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .exp-sliding-parrot {
+    position: static;
+    display: inline-block;
+    margin-top: 14px;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  .exp-timeline-line {
+    display: none;
+  }
+
+  .exp-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px 20px;
+  }
+
+  .exp-lightbox-modal {
+    grid-template-columns: 1fr;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .exp-lightbox-image-wrap {
+    min-height: 250px;
+  }
+
+  .exp-event-row {
+    grid-template-columns: 120px 1fr 110px auto;
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-theatrical-band {
+    padding: 60px 0 80px;
+  }
+
+  .exp-cards-slider-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .exp-cards-slider-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .exp-cards-grid {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .exp-card {
+    flex: 0 0 290px;
+    width: 290px;
+    min-height: 440px;
+    scroll-snap-align: start;
+  }
+
+  .exp-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .exp-timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .exp-event-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .exp-event-action-link {
+    text-align: left;
+    margin-top: 4px;
+  }
+
+  .exp-events-notice-box {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 22px 18px;
+  }
+
+  .exp-notice-form {
+    flex-direction: column;
+  }
+}
