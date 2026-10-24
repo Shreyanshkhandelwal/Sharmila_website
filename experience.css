@@ -928,58 +928,80 @@
 
 /* Event Content Card Row */
 .exp-event-row {
-  display: grid;
-  grid-template-columns: 140px 1fr 140px 170px;
+  display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 20px 26px;
+  justify-content: space-between;
+  gap: clamp(16px, 2.5vw, 32px);
+  padding: 24px 32px;
   background: var(--exp-paper);
   border: 1.5px solid var(--exp-mocha);
-  border-radius: 8px;
-  box-shadow: 4px 4px 0 var(--exp-mocha);
-  margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--exp-mocha);
+  margin-bottom: 18px;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .exp-event-row:hover {
-  transform: translateX(4px) translateY(-2px);
-  box-shadow: 6px 6px 0 var(--exp-mocha);
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--exp-mocha);
 }
 
 .exp-event-date {
-  font-size: 13px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--exp-rose);
+  background: rgba(229, 131, 121, 0.12);
+  padding: 7px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 110px;
+  text-align: center;
+}
+
+.exp-event-name-col {
+  flex: 1 1 0%;
+  min-width: 0;
 }
 
 .exp-event-name-col h4 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 19px;
+  font-size: clamp(20px, 1.8vw, 24px);
   line-height: 1.25;
   color: var(--exp-mocha);
-  margin: 0 0 4px;
+  margin: 0 0 6px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .exp-event-name-col p {
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 14.5px;
+  line-height: 1.55;
   color: rgba(56, 23, 15, 0.75);
   margin: 0;
+  max-width: 640px;
 }
 
 .exp-event-city {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--exp-olive);
+  background: rgba(119, 128, 80, 0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .exp-event-action-link {
   text-align: right;
+  flex-shrink: 0;
 }
 
 /* Event Action Button matching website style */
@@ -987,20 +1009,22 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
-  background: var(--exp-pink-soft);
+  padding: 10px 22px;
+  background: var(--exp-pink);
   color: var(--exp-mocha);
   border: 1.5px solid var(--exp-mocha);
   border-radius: 999px;
   box-shadow: 2px 2px 0 var(--exp-mocha);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  white-space: nowrap;
+  transition: all 0.22s ease;
 }
 
 .exp-event-btn:hover {
-  background: var(--exp-pink);
+  background: var(--exp-mocha);
+  color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 3px 3px 0 var(--exp-mocha);
 }
@@ -1259,8 +1283,9 @@
   }
 
   .exp-event-row {
-    grid-template-columns: 120px 1fr 110px auto;
-    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 24px;
   }
 }
 
@@ -1308,14 +1333,25 @@
   }
 
   .exp-event-row {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+  }
+
+  .exp-event-name-col {
+    width: 100%;
   }
 
   .exp-event-action-link {
+    width: 100%;
     text-align: left;
     margin-top: 4px;
+  }
+
+  .exp-event-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .exp-events-notice-box {
