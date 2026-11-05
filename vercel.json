@@ -6,7 +6,6 @@
   },
   "rewrites": [
     { "source": "/book-call", "destination": "/index.html" },
-    { "source": "/experience", "destination": "/experience.html" },
     { "source": "/events", "destination": "/experience.html" }
   ]
 }

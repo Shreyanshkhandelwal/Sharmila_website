@@ -1354,6 +1354,30 @@
     justify-content: center;
   }
 
+  .exp-event-action-single {
+    width: 100%;
+    align-items: center;
+  }
+
+  .exp-ticker-item {
+    padding: 9px 16px;
+    gap: 8px;
+  }
+
+  .exp-ticker-text {
+    font-size: 13.5px;
+  }
+
+  .exp-ticker-badge {
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+
+  .exp-ticker-cta {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+
   .exp-events-notice-box {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -1362,5 +1386,224 @@
 
   .exp-notice-form {
     flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   SCROLLING ANNOUNCEMENT BAR / TICKER (MARQUEE)
+   Positioned directly after the navbar on the Event / Experience section
+   ========================================================================== */
+.exp-ticker-banner {
+  position: relative;
+  width: 100%;
+  background: var(--exp-mocha, #38170f);
+  color: var(--exp-bg, #fbf8ed);
+  border-top: 1px solid rgba(243, 174, 188, 0.2);
+  border-bottom: 2px solid var(--exp-rose, #c95272);
+  overflow: hidden;
+  z-index: 15;
+  box-shadow: 0 4px 14px rgba(56, 23, 15, 0.14);
+}
+
+.exp-ticker-inner {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.exp-ticker-track {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  animation: expTickerMarquee 34s linear infinite;
+  will-change: transform;
+}
+
+.exp-ticker-banner:hover .exp-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes expTickerMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.exp-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 26px;
+  color: #fbf8ed;
+  text-decoration: none;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.015em;
+  transition: background 0.22s ease, color 0.22s ease;
+  cursor: pointer;
+}
+
+.exp-ticker-item:hover {
+  background: rgba(243, 174, 188, 0.14);
+}
+
+.exp-ticker-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #38170f;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.exp-ticker-badge svg {
+  display: block;
+}
+
+.exp-ticker-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #fbf8ed;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+
+.exp-ticker-item:hover .exp-ticker-text {
+  color: #f3aebc;
+}
+
+.exp-ticker-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  font-size: 12.5px;
+  color: #f3aebc;
+  background: rgba(243, 174, 188, 0.15);
+  border: 1px solid rgba(243, 174, 188, 0.35);
+  padding: 3px 10px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.exp-ticker-item:hover .exp-ticker-cta {
+  background: #c95272;
+  color: #ffffff;
+  border-color: #c95272;
+  transform: translateX(2px);
+}
+
+.exp-ticker-sep {
+  color: #c95272;
+  font-size: 13px;
+  margin-left: 10px;
+  opacity: 0.85;
+}
+
+/* Ticket Stub YouTube pill */
+.exp-ticket-yt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #c95272;
+  color: #fffdf6 !important;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(56, 23, 15, 0.2);
+}
+
+.exp-ticket-yt-pill:hover {
+  background: #38170f;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(56, 23, 15, 0.3);
+}
+
+/* Event table styling for YouTube row */
+.exp-event-date-live {
+  background: rgba(201, 82, 114, 0.14) !important;
+  color: var(--exp-rose) !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.exp-event-action-single {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.exp-event-sub-link {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--exp-mocha);
+  opacity: 0.72;
+  text-decoration: underline;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.exp-event-sub-link:hover {
+  opacity: 1;
+  color: var(--exp-rose);
+}
+
+/* Gallery Lightbox YouTube Action Button */
+.exp-lightbox-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.exp-lightbox-yt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: #c95272;
+  color: #ffffff !important;
+  border: 2px solid #38170f;
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 #38170f;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.exp-lightbox-yt-btn:hover {
+  background: #38170f;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 #38170f;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-ticker-track {
+    animation-duration: 90s;
   }
 }

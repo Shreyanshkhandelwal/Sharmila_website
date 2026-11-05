@@ -56,6 +56,7 @@
     var lightboxTitle = document.getElementById('exp-lightbox-title');
     var lightboxDesc = document.getElementById('exp-lightbox-desc');
     var lightboxCloseBtn = document.getElementById('exp-lightbox-close');
+    var lightboxYtBtn = document.getElementById('exp-lightbox-yt-btn');
 
     if (galleryItems.length > 0 && lightboxOverlay) {
       galleryItems.forEach(function (item) {
@@ -64,11 +65,21 @@
           var tag = item.getAttribute('data-tag') || (item.querySelector('.exp-gallery-tag') ? item.querySelector('.exp-gallery-tag').textContent : '');
           var title = item.getAttribute('data-title') || (item.querySelector('.exp-gallery-title') ? item.querySelector('.exp-gallery-title').textContent : '');
           var desc = item.getAttribute('data-desc') || 'A signature Mocha Story Lab experiential convening where physical nuance and narrative depth converge.';
+          var yt = item.getAttribute('data-yt');
 
           if (lightboxImg && img) lightboxImg.src = img.src;
           if (lightboxTag) lightboxTag.textContent = tag;
           if (lightboxTitle) lightboxTitle.textContent = title;
           if (lightboxDesc) lightboxDesc.textContent = desc;
+
+          if (lightboxYtBtn) {
+            if (yt) {
+              lightboxYtBtn.href = yt;
+              lightboxYtBtn.style.display = 'inline-flex';
+            } else {
+              lightboxYtBtn.style.display = 'none';
+            }
+          }
 
           lightboxOverlay.classList.add('is-open');
           document.body.style.overflow = 'hidden';

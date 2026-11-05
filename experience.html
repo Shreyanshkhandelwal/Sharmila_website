@@ -35,6 +35,75 @@
     </header>
 
     <!-- =====================================================================
+         SCROLLING ANNOUNCEMENT BAR / TICKER (MARQUEE)
+         ===================================================================== -->
+    <aside class="exp-ticker-banner" role="region" aria-label="Latest Announcement">
+      <div class="exp-ticker-inner">
+        <div class="exp-ticker-track">
+          <!-- Item 1 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item" <span class="exp-ticker-text">The first edition of Ghar is
+            up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+          <!-- Item 2 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item">
+            <span class="exp-ticker-text">The first edition of Ghar is up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+          <!-- Item 3 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item">
+            <span class="exp-ticker-text">The first edition of Ghar is up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+          <!-- Item 4 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item">
+            <span class="exp-ticker-text">The first edition of Ghar is up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+        </div>
+        <!-- Duplicate Track for Seamless Infinite Marquee Loop -->
+        <div class="exp-ticker-track" aria-hidden="true">
+          <!-- Item 1 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item" tabindex="-1">
+            <span class="exp-ticker-text">The first edition of Ghar is up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+          <!-- Item 2 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item" tabindex="-1">
+            <span class="exp-ticker-text">The first edition of Ghar is up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+          <!-- Item 3 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item" tabindex="-1">
+            <span class="exp-ticker-text">The first edition of Ghar is up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+          <!-- Item 4 -->
+          <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+            rel="noopener noreferrer" class="exp-ticker-item" tabindex="-1">
+            <span class="exp-ticker-text">The first edition of Ghar is up on YouTube</span>
+            <span class="exp-ticker-cta">Watch Playlist ↗</span>
+            <span class="exp-ticker-sep" aria-hidden="true">✦</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =====================================================================
          THEATRICAL EXPERIENCE SECTION: 8 BLOCKS
          ===================================================================== -->
     <section id="experience" class="experience-theatrical-band" aria-label="Mocha Story Lab Experience Section">
@@ -68,7 +137,9 @@
                   <h4>Ghar | घर</h4>
                   <p>A collective of memories: where home, heritage, and human emotion converge.</p>
                   <div class="exp-ticket-footer">
-                    <span>Launching Soon</span>
+                    <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+                      rel="noopener noreferrer" class="exp-ticket-yt-pill" onclick="event.stopPropagation();"
+                      title="Watch on YouTube">▶ On YouTube ↗</a>
                     <span>View Story →</span>
                   </div>
                 </div>
@@ -182,6 +253,9 @@
                   <h4>Ghar | घर</h4>
                   <p>A collective of memories: where home, heritage, and human emotion converge.</p>
                   <div class="exp-ticket-footer">
+                    <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+                      rel="noopener noreferrer" class="exp-ticket-yt-pill" onclick="event.stopPropagation();"
+                      title="Watch on YouTube">▶ On YouTube ↗</a>
                     <span>View Story →</span>
                   </div>
                 </div>
@@ -459,12 +533,19 @@
             <!-- Tile 1: Ghar | घर -->
             <div class="exp-gallery-item" data-id="gallery-1" data-tag="Home &amp; Interior · Immersive Conversations"
               data-title="Ghar | घर — A Series of Conversations by Mocha Story Lab"
-              data-desc="Home means different things to different people. While there is always an ideal image of the perfect home, the truth is no two homes are the same. It is a mix of everything that everyone living under a single roof is — to children it is the universe; to adults it is the centre point of stability and success. Being home-proud is a natural human desire, yet home is also a bundle of emotions: dreams, hopes, seeking refuge, and a collective of memories. Ghar | घर is a signature storytelling ensemble and immersive series of conversations inspired by literature, poetry, and music. Launching soon — we want to hear your home stories too.">
+              data-desc="Home means different things to different people. While there is always an ideal image of the
+              perfect home, the truth is no two homes are the same. It is a mix of everything that everyone living under
+              a single roof is — to children it is the universe; to adults it is the centre point of stability and
+              success. Being home-proud is a natural human desire, yet home is also a bundle of emotions: dreams, hopes,
+              seeking refuge, and a collective of memories. Ghar | घर is a signature storytelling ensemble and immersive
+              series of conversations inspired by literature, poetry, and music. The first edition of Ghar is now
+              streaming on YouTube — immerse in our curated playlist of conversations."
+              data-yt="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl">
               <img src="assets/exp_cultural_soiree.jpg" alt="Ghar | घर — Home &amp; Interior Storytelling">
               <div class="exp-gallery-overlay">
                 <span class="exp-gallery-tag">Home &amp; Interior</span>
                 <h4 class="exp-gallery-title">Ghar | घर</h4>
-                <span class="exp-gallery-view-hint">Click to expand story ↗</span>
+                <span class="exp-gallery-view-hint">▶ Watch Edition on YouTube ↗</span>
               </div>
             </div>
 
@@ -553,188 +634,200 @@
             <!-- Tab Panel: Upcoming -->
             <div id="exp-panel-upcoming" class="exp-tab-panel is-active" role="tabpanel">
               <div class="exp-event-row">
+                <span class="exp-event-date exp-event-date-live">OUT NOW</span>
                 <div class="exp-event-name-col">
                   <h4>Ghar | घर: The Storytelling Ensemble</h4>
                   <p>A series of conversations exploring memories of childhood homes, design, emotion, and belonging.
                   </p>
                 </div>
                 <span class="exp-event-city">📍 Jaipur</span>
-                <div class="exp-event-action-link">
-                  <a href="/book-call" class="exp-event-btn">Share Your Story →</a>
+                <div class="exp-event-action-link exp-event-action-single">
+                  <a href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl" target="_blank"
+                    rel="noopener noreferrer" class="exp-event-btn" title="Watch on YouTube">
+                    <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align: -2px; margin-right: 2px;">
+                      <path fill="#FF0000"
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+                      <path fill="#FFFFFF" d="m9.545 15.568 6.24-3.568-6.24-3.568z" />
+                    </svg>
+                    Watch on YouTube ↗
+                  </a>
+                  <a href="/book-call" class="exp-event-sub-link">Share Your Story →</a>
                 </div>
               </div>
 
-              <div class="exp-event-row">
-                <span class="exp-event-date">NOV 28, 2026</span>
-                <div class="exp-event-name-col">
-                  <h4>The Intimate Salon: Stories in Solitude</h4>
-                  <p>A closed-door colloquium on the discipline of silence and thought leadership.</p>
+                <div class="exp-event-row">
+                  <span class="exp-event-date">NOV 28, 2026</span>
+                  <div class="exp-event-name-col">
+                    <h4>The Intimate Salon: Stories in Solitude</h4>
+                    <p>A closed-door colloquium on the discipline of silence and thought leadership.</p>
+                  </div>
+                  <span class="exp-event-city">📍 Mumbai</span>
+                  <div class="exp-event-action-link">
+                    <a href="/book-call" class="exp-event-btn">Reserve Seat →</a>
+                  </div>
                 </div>
-                <span class="exp-event-city">📍 Mumbai</span>
-                <div class="exp-event-action-link">
-                  <a href="/book-call" class="exp-event-btn">Reserve Seat →</a>
+
+                <div class="exp-event-row">
+                  <span class="exp-event-date">DEC 15, 2026</span>
+                  <div class="exp-event-name-col">
+                    <h4>Heritage &amp; Horizon: A Winter Soirée</h4>
+                    <p>Live recital, craft showcase, and brand storytelling under Delhi winter skies.</p>
+                  </div>
+                  <span class="exp-event-city">📍 New Delhi</span>
+                  <div class="exp-event-action-link">
+                    <a href="/book-call" class="exp-event-btn">Enquire →</a>
+                  </div>
+                </div>
+
+                <div class="exp-event-row">
+                  <span class="exp-event-date">JAN 22, 2027</span>
+                  <div class="exp-event-name-col">
+                    <h4>The Story Architecture Symposium</h4>
+                    <p>An experiential laboratory for founders and creative heads designing 2027 narratives.</p>
+                  </div>
+                  <span class="exp-event-city">📍 Bengaluru</span>
+                  <div class="exp-event-action-link">
+                    <a href="/book-call" class="exp-event-btn">Join Waitlist →</a>
+                  </div>
                 </div>
               </div>
 
-              <div class="exp-event-row">
-                <span class="exp-event-date">DEC 15, 2026</span>
-                <div class="exp-event-name-col">
-                  <h4>Heritage &amp; Horizon: A Winter Soirée</h4>
-                  <p>Live recital, craft showcase, and brand storytelling under Delhi winter skies.</p>
+              <!-- Tab Panel: Past -->
+              <div id="exp-panel-past" class="exp-tab-panel" role="tabpanel">
+                <div class="exp-event-row">
+                  <span class="exp-event-date">OCT 12, 2026</span>
+                  <div class="exp-event-name-col">
+                    <h4>The Courtyard Chronicles: Founder Circle</h4>
+                    <p>Private roundtable with ten national consumer brand founders in Jaipur.</p>
+                  </div>
+                  <span class="exp-event-city">📍 Jaipur</span>
+                  <div class="exp-event-action-link">
+                    <a href="newsletter.html" class="exp-event-btn">Read Dispatch →</a>
+                  </div>
                 </div>
-                <span class="exp-event-city">📍 New Delhi</span>
-                <div class="exp-event-action-link">
-                  <a href="/book-call" class="exp-event-btn">Enquire →</a>
+
+                <div class="exp-event-row">
+                  <span class="exp-event-date">AUG 24, 2026</span>
+                  <div class="exp-event-name-col">
+                    <h4>Words That Stay: A Literary Soirée</h4>
+                    <p>Evening celebrating published memoirs and strategic essayists in Mayfair.</p>
+                  </div>
+                  <span class="exp-event-city">📍 London</span>
+                  <div class="exp-event-action-link">
+                    <a href="newsletter.html" class="exp-event-btn">Read Dispatch →</a>
+                  </div>
+                </div>
+
+                <div class="exp-event-row">
+                  <span class="exp-event-date">JUL 08, 2026</span>
+                  <div class="exp-event-name-col">
+                    <h4>Scent, Craft &amp; Story Chamber</h4>
+                    <p>Interactive olfactory and spatial storytelling installation for luxury goods.</p>
+                  </div>
+                  <span class="exp-event-city">📍 Mumbai</span>
+                  <div class="exp-event-action-link">
+                    <a href="newsletter.html" class="exp-event-btn">Read Dispatch →</a>
+                  </div>
                 </div>
               </div>
 
-              <div class="exp-event-row">
-                <span class="exp-event-date">JAN 22, 2027</span>
-                <div class="exp-event-name-col">
-                  <h4>The Story Architecture Symposium</h4>
-                  <p>An experiential laboratory for founders and creative heads designing 2027 narratives.</p>
+              <!-- "Be First to Know" Newsletter Field -->
+              <div class="exp-events-notice-box">
+                <div class="exp-notice-text">
+                  <h4>Be First to Know</h4>
+                  <p>Private salons, secret retreats, and unlisted gatherings are announced to our letter subscribers
+                    first.</p>
                 </div>
-                <span class="exp-event-city">📍 Bengaluru</span>
-                <div class="exp-event-action-link">
-                  <a href="/book-call" class="exp-event-btn">Join Waitlist →</a>
-                </div>
+                <form class="exp-notice-form" action="#"
+                  onsubmit="event.preventDefault(); const btn = this.querySelector('button'); const email = this.querySelector('input').value; btn.textContent = 'Joining...'; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, source: 'Experience Section' }) }).then(r => r.json()).then(d => { if(d.message) { this.innerHTML = '<span style=\'color: var(--exp-pink); font-weight: 600;\'>✨ You are on the invitation list.</span>'; } else { alert(d.error); btn.textContent = 'Notify Me →'; } }).catch(() => { alert('Subscription error. Please try again.'); btn.textContent = 'Notify Me →'; });">
+                  <input class="exp-notice-input" type="email" placeholder="Enter your email address" required
+                    aria-label="Enter email to receive event invitations">
+                  <button class="exp-notice-submit" type="submit">Notify Me →</button>
+                </form>
               </div>
-            </div>
-
-            <!-- Tab Panel: Past -->
-            <div id="exp-panel-past" class="exp-tab-panel" role="tabpanel">
-              <div class="exp-event-row">
-                <span class="exp-event-date">OCT 12, 2026</span>
-                <div class="exp-event-name-col">
-                  <h4>The Courtyard Chronicles: Founder Circle</h4>
-                  <p>Private roundtable with ten national consumer brand founders in Jaipur.</p>
-                </div>
-                <span class="exp-event-city">📍 Jaipur</span>
-                <div class="exp-event-action-link">
-                  <a href="newsletter.html" class="exp-event-btn">Read Dispatch →</a>
-                </div>
-              </div>
-
-              <div class="exp-event-row">
-                <span class="exp-event-date">AUG 24, 2026</span>
-                <div class="exp-event-name-col">
-                  <h4>Words That Stay: A Literary Soirée</h4>
-                  <p>Evening celebrating published memoirs and strategic essayists in Mayfair.</p>
-                </div>
-                <span class="exp-event-city">📍 London</span>
-                <div class="exp-event-action-link">
-                  <a href="newsletter.html" class="exp-event-btn">Read Dispatch →</a>
-                </div>
-              </div>
-
-              <div class="exp-event-row">
-                <span class="exp-event-date">JUL 08, 2026</span>
-                <div class="exp-event-name-col">
-                  <h4>Scent, Craft &amp; Story Chamber</h4>
-                  <p>Interactive olfactory and spatial storytelling installation for luxury goods.</p>
-                </div>
-                <span class="exp-event-city">📍 Mumbai</span>
-                <div class="exp-event-action-link">
-                  <a href="newsletter.html" class="exp-event-btn">Read Dispatch →</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- "Be First to Know" Newsletter Field -->
-            <div class="exp-events-notice-box">
-              <div class="exp-notice-text">
-                <h4>Be First to Know</h4>
-                <p>Private salons, secret retreats, and unlisted gatherings are announced to our letter subscribers
-                  first.</p>
-              </div>
-              <form class="exp-notice-form" action="#"
-                onsubmit="event.preventDefault(); const btn = this.querySelector('button'); const email = this.querySelector('input').value; btn.textContent = 'Joining...'; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, source: 'Experience Section' }) }).then(r => r.json()).then(d => { if(d.message) { this.innerHTML = '<span style=\'color: var(--exp-pink); font-weight: 600;\'>✨ You are on the invitation list.</span>'; } else { alert(d.error); btn.textContent = 'Notify Me →'; } }).catch(() => { alert('Subscription error. Please try again.'); btn.textContent = 'Notify Me →'; });">
-                <input class="exp-notice-input" type="email" placeholder="Enter your email address" required
-                  aria-label="Enter email to receive event invitations">
-                <button class="exp-notice-submit" type="submit">Notify Me →</button>
-              </form>
             </div>
           </div>
+
+          <!-- BLOCK 7: OUR APPROACH (LISTEN → IMAGINE → BUILD → REMEMBER) -->
+          <div class="exp-approach-block">
+            <div class="exp-section-header">
+              <p class="exp-eyebrow-label">
+                <img class="kicker-bird bird-start" src="assets/mocha-bird-green.png" alt="" aria-hidden="true">
+                Methodology
+              </p>
+              <h2>How We Stage <em>The Unforgettable</em></h2>
+              <p class="exp-section-sub">A four-part choreography that turns abstract brand strategy into living memory.
+              </p>
+            </div>
+
+            <div class="exp-timeline-wrap">
+              <div class="exp-timeline-line" aria-hidden="true"></div>
+              <div class="exp-timeline-grid">
+
+                <!-- Step 1: Listen -->
+                <div class="exp-step-node">
+                  <div class="exp-step-badge">
+                    <span class="exp-step-icon">◎</span>
+                    <span>01</span>
+                  </div>
+                  <h3 class="exp-step-name">Listen</h3>
+                  <p class="exp-step-copy">We listen for the quietest truths, unsaid ambitions, and cultural roots of
+                    your
+                    brand that market research routinely misses.</p>
+                </div>
+
+                <!-- Step 2: Imagine -->
+                <div class="exp-step-node">
+                  <div class="exp-step-badge">
+                    <span class="exp-step-icon">✦</span>
+                    <span>02</span>
+                  </div>
+                  <h3 class="exp-step-name">Imagine</h3>
+                  <p class="exp-step-copy">We design the sensory and emotional arc: ambient light, music, hospitality
+                    rituals, spatial movement, and conversational provocations.</p>
+                </div>
+
+                <!-- Step 3: Build -->
+                <div class="exp-step-node">
+                  <div class="exp-step-badge">
+                    <span class="exp-step-icon">◈</span>
+                    <span>03</span>
+                  </div>
+                  <h3 class="exp-step-name">Build</h3>
+                  <p class="exp-step-copy">We bring the room alive with master craftsmen, artists, set builders, and
+                    hospitality curators who treat every square foot as a stage.</p>
+                </div>
+
+                <!-- Step 4: Remember -->
+                <div class="exp-step-node">
+                  <div class="exp-step-badge">
+                    <span class="exp-step-icon">❋</span>
+                    <span>04</span>
+                  </div>
+                  <h3 class="exp-step-name">Remember</h3>
+                  <p class="exp-step-copy">We script tactile keepsakes, recorded oral archives, and story dispatches
+                    that
+                    keep the room whispering long after the evening concludes.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- BLOCK 8: CLOSING CALL TO ACTION -->
+          <div class="exp-closing-block">
+            <div class="exp-closing-inner">
+              <img class="exp-closing-bird" src="assets/mocha-bird.png" alt="" aria-hidden="true">
+              <h2 class="exp-closing-headline">Make your brand <span class="exp-italic-pink">felt.</span></h2>
+              <p class="exp-closing-copy">
+                Every iconic brand deserves rooms that speak in the same voice as its story. Let us design an
+                unforgettable room together.
+              </p>
+              <a href="/book-call" class="exp-pill-btn">Let's Design Yours</a>
+            </div>
+          </div>
+
         </div>
-
-        <!-- BLOCK 7: OUR APPROACH (LISTEN → IMAGINE → BUILD → REMEMBER) -->
-        <div class="exp-approach-block">
-          <div class="exp-section-header">
-            <p class="exp-eyebrow-label">
-              <img class="kicker-bird bird-start" src="assets/mocha-bird-green.png" alt="" aria-hidden="true">
-              Methodology
-            </p>
-            <h2>How We Stage <em>The Unforgettable</em></h2>
-            <p class="exp-section-sub">A four-part choreography that turns abstract brand strategy into living memory.
-            </p>
-          </div>
-
-          <div class="exp-timeline-wrap">
-            <div class="exp-timeline-line" aria-hidden="true"></div>
-            <div class="exp-timeline-grid">
-
-              <!-- Step 1: Listen -->
-              <div class="exp-step-node">
-                <div class="exp-step-badge">
-                  <span class="exp-step-icon">◎</span>
-                  <span>01</span>
-                </div>
-                <h3 class="exp-step-name">Listen</h3>
-                <p class="exp-step-copy">We listen for the quietest truths, unsaid ambitions, and cultural roots of your
-                  brand that market research routinely misses.</p>
-              </div>
-
-              <!-- Step 2: Imagine -->
-              <div class="exp-step-node">
-                <div class="exp-step-badge">
-                  <span class="exp-step-icon">✦</span>
-                  <span>02</span>
-                </div>
-                <h3 class="exp-step-name">Imagine</h3>
-                <p class="exp-step-copy">We design the sensory and emotional arc: ambient light, music, hospitality
-                  rituals, spatial movement, and conversational provocations.</p>
-              </div>
-
-              <!-- Step 3: Build -->
-              <div class="exp-step-node">
-                <div class="exp-step-badge">
-                  <span class="exp-step-icon">◈</span>
-                  <span>03</span>
-                </div>
-                <h3 class="exp-step-name">Build</h3>
-                <p class="exp-step-copy">We bring the room alive with master craftsmen, artists, set builders, and
-                  hospitality curators who treat every square foot as a stage.</p>
-              </div>
-
-              <!-- Step 4: Remember -->
-              <div class="exp-step-node">
-                <div class="exp-step-badge">
-                  <span class="exp-step-icon">❋</span>
-                  <span>04</span>
-                </div>
-                <h3 class="exp-step-name">Remember</h3>
-                <p class="exp-step-copy">We script tactile keepsakes, recorded oral archives, and story dispatches that
-                  keep the room whispering long after the evening concludes.</p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- BLOCK 8: CLOSING CALL TO ACTION -->
-        <div class="exp-closing-block">
-          <div class="exp-closing-inner">
-            <img class="exp-closing-bird" src="assets/mocha-bird.png" alt="" aria-hidden="true">
-            <h2 class="exp-closing-headline">Make your brand <span class="exp-italic-pink">felt.</span></h2>
-            <p class="exp-closing-copy">
-              Every iconic brand deserves rooms that speak in the same voice as its story. Let us design an
-              unforgettable room together.
-            </p>
-            <a href="/book-call" class="exp-pill-btn">Let's Design Yours</a>
-          </div>
-        </div>
-
-      </div>
     </section>
 
     <!-- Gallery Lightbox Modal Component -->
@@ -749,59 +842,72 @@
           <span id="exp-lightbox-tag" class="exp-lightbox-tag"></span>
           <h3 id="exp-lightbox-title" class="exp-lightbox-title"></h3>
           <p id="exp-lightbox-desc" class="exp-lightbox-desc"></p>
-          <div>
-            <a href="/book-call" class="exp-pill-btn" style="font-size: 15px; padding: 10px 24px;">Create an
-              Experience</a>
+            <div class="exp-lightbox-actions">
+              <a id="exp-lightbox-yt-btn" href="https://youtube.com/playlist?list=PLUNwfEnJLvcQ&amp;si=LzrxwDV-VqQgExWl"
+                target="_blank" rel="noopener noreferrer" class="exp-lightbox-yt-btn" style="display: none;"
+                title="Watch on YouTube">
+                <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#FF0000"
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+                  <path fill="#FFFFFF" d="m9.545 15.568 6.24-3.568-6.24-3.568z" />
+                </svg>
+                Watch on YouTube ↗
+              </a>
+              <a href="/book-call" class="exp-pill-btn" style="font-size: 15px; padding: 10px 24px;">Create an
+                Experience</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="lotus-divider" aria-hidden="true"><span></span><img src="assets/lotus-divider.png" alt=""><span></span>
-    </div>
+      <div class="lotus-divider" aria-hidden="true"><span></span><img src="assets/lotus-divider.png"
+          alt=""><span></span>
+      </div>
 
-    <footer>
-      <div class="footer-left">
-        <div class="footer-social">
-          <a class="social-icon-btn" href="https://www.linkedin.com/in/sharmilabhowmick/" target="_blank"
-            rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.978 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.225 0z" />
-            </svg>
-          </a>
-          <a class="social-icon-btn" href="https://www.youtube.com/@shormitalks" target="_blank"
-            rel="noopener noreferrer" aria-label="YouTube">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-            </svg>
-          </a>
-          <a class="social-icon-btn" href="https://www.instagram.com/mocha.storylab/" target="_blank"
-            rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-          </a>
-          <a class="social-icon-btn" href="mailto:coffee@mochastorylab.com" aria-label="Email coffee@mochastorylab.com">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
-          </a>
+      <footer>
+        <div class="footer-left">
+          <div class="footer-social">
+            <a class="social-icon-btn" href="https://www.linkedin.com/in/sharmilabhowmick/" target="_blank"
+              rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.978 0 1.778-.773 1.778-1.729V1.73C24 .774 23.205 0 22.225 0z" />
+              </svg>
+            </a>
+            <a class="social-icon-btn" href="https://www.youtube.com/@shormitalks" target="_blank"
+              rel="noopener noreferrer" aria-label="YouTube">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a class="social-icon-btn" href="https://www.instagram.com/mocha.storylab/" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a class="social-icon-btn" href="mailto:coffee@mochastorylab.com"
+              aria-label="Email coffee@mochastorylab.com">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </a>
+          </div>
+          <a class="footer-email" href="mailto:coffee@mochastorylab.com">coffee@mochastorylab.com</a>
         </div>
-        <a class="footer-email" href="mailto:coffee@mochastorylab.com">coffee@mochastorylab.com</a>
-      </div>
-      <a class="footer-logo" href="index.html" aria-label="Mocha Story Lab home">
-        <img src="assets/mocha-banner-logo.png" alt="Mocha Story Lab">
-      </a>
-      <div class="footer-right">
-        <p><img class="footer-bird-icon bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Tell It. Earn
-          Trust.</p>
-        <small class="footer-copy">&copy; 2026 Mocha Storylab. All rights reserved.</small>
-      </div>
-    </footer>
+        <a class="footer-logo" href="index.html" aria-label="Mocha Story Lab home">
+          <img src="assets/mocha-banner-logo.png" alt="Mocha Story Lab">
+        </a>
+        <div class="footer-right">
+          <p><img class="footer-bird-icon bird-start" src="assets/mocha-bird.png" alt="" aria-hidden="true"> Tell It.
+            Earn
+            Trust.</p>
+          <small class="footer-copy">&copy; 2026 Mocha Storylab. All rights reserved.</small>
+        </div>
+      </footer>
   </main>
 
   <!-- Sticky CTA button -->
